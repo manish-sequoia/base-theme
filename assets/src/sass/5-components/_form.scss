@@ -1,0 +1,63 @@
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: $color__background-button;
+	border-radius: $border-radius;
+	border: 1px solid $color__border-button;
+	color: $color__body-text;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	padding: 6px 12px;
+	white-space: nowrap;
+	vertical-align: middle;
+
+	&:hover {
+		background: $color__background-button-hover;
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		background: $color__background-button-hover;
+		border-color: $color__border-button-hover;
+	}
+}
+
+/*---------------------------
+		Fields
+---------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1) inset;
+	max-width: 100%;
+	outline: none;
+	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+textarea {
+	color: $color__text-input;
+	border: 1px solid $color__border-input;
+	border-radius: $border-radius;
+
+	&:focus {
+		color: $color__text-input-focus;
+	}
+}

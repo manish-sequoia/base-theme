@@ -1,0 +1,38 @@
+@use "sass:map";
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 map.get($grid-column-gutter, small);
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: map.get($grid-column-gutter, small) 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 map.get($grid-column-gutter, small);
+}
+
+.site-main {
+	background: $white;
+}
+
+.base-theme-pagination {
+	text-align: center;
+}

@@ -1,0 +1,44 @@
+@use "sass:map";
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Add font scale with media query as per configuration on $body-text
+ * Ex: @include body-text( h1 );
+ * This will add font-size and line-height with different breakpoints.
+ */
+@mixin body-text( $level: normal, $body-text: $body-text, $device-size: false ) {
+
+	@if type-of($body-text) != "map" {
+
+		@error "`#{$body-text}` is not a valid value for $values. It must be a list.";
+	}
+
+	$size: map.get($body-text, $level);
+
+	@if type-of($size) == "map" {
+
+		@if $device-size == false {
+
+			@each $device, $values in $size {
+
+				@include breakpoint($device) {
+
+					font-size: map.get($values, "font-size");
+					line-height: map.get($values, "line-height");
+
+				}
+			}
+		} @else {
+
+			$device_values: map.get($size, $device-size);
+
+			font-size: map.get($device_values, "font-size");
+			line-height: map.get($device_values, "line-height");
+
+		}
+	}
+}

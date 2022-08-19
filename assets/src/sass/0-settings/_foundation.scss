@@ -1,0 +1,45 @@
+// Foundation variables.
+
+// Project specific breakpoints.
+$g-breakpoint-mobile: 568px;
+$g-breakpoint-small-tablet: 667px;
+$g-breakpoint-tablet: 768px;
+$g-breakpoint-desktop: 1024px;
+$g-breakpoint-large-desktop: 1280px;
+
+// Foundation Grid
+$breakpoints: (
+	small : 0,
+	medium : $g-breakpoint-tablet,
+	large : $g-breakpoint-desktop,
+	xlarge : $g-breakpoint-large-desktop
+);
+
+$grid-margin-gutters: (
+	small : 24px,
+	medium : 24px,
+	large : 24px,
+	xlarge : 24px
+);
+
+$grid-column-gutter: $grid-margin-gutters;
+
+// Foundation breakpoint for print styles.
+$print-breakpoint: xlarge;
+
+// Foundation grid classes
+$breakpoint-classes: small medium large xlarge;
+
+// Global width of your site. Used by the grid to determine row width.
+$grid-container: 1200px;
+
+// The default column count of a grid. Changing this value affects the
+// logic of the grid mixins, and the number of CSS classes output.
+$grid-columns: 12;
+
+// Global spacing between columns.
+$grid-column-align-edge: true;
+$grid-column-alias: "columns";
+
+// Block grid max number
+$block-grid-max: 8;

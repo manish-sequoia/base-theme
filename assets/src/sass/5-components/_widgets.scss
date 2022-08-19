@@ -1,0 +1,30 @@
+/**
+ * Widget Styles.
+ */
+
+@use "sass:map";
+
+.widget {
+	margin: 0 0 map.get($grid-column-gutter, small);
+
+	select {
+		max-width: 100%;
+	}
+
+	&-sidebar {
+		clear: both;
+		padding: map.get($grid-column-gutter, small) * 0.5;
+	}
+
+	&-search {
+
+		.search-submit {
+			display: none;
+		}
+	}
+
+	&-title {
+		font-size: 22px;
+		line-height: 30px;
+	}
+}

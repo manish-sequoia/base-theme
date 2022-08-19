@@ -1,0 +1,35 @@
+# IDE or OS
+.idea/
+.DS_Store
+
+# Log files
+*.log
+
+# Build artifact
+.grunt
+
+# local
+node_modules/
+vendor
+
+.phpintel
+.sass-cache
+.scss-cache
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+_book
+nbproject
+nbproject/private/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+npm-debug.log
+node_modules
+**/.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace

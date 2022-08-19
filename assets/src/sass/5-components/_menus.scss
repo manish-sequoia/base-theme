@@ -1,0 +1,102 @@
+/* stylelint-disable -- Remove this as you update the menu styles. */
+/*==============================
+          Main Menu
+===============================*/
+
+.primary-navigation {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			background: $bright-gray;
+			float: left;
+			left: -9999em;
+			position: absolute;
+			top: 35px;
+			z-index: 9999;
+
+			ul {
+				left: -9999em;
+				top: 0;
+			}
+
+			li {
+
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			&:hover > a,
+			&.focus > a {
+				color: $color__link-hover;
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+
+		li {
+			margin-left: 0;
+		}
+
+		&:hover > a,
+		&.focus > a {
+			color: $color__link-hover;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 10px;
+	}
+
+	.current_page_item,
+	.current-menu-item,
+	.current_page_ancestor {
+		> a {
+			color: $color__link-hover;
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 24px;
+		overflow: hidden;
+	}
+
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+/* stylelint-enable */

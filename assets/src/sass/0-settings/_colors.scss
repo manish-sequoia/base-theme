@@ -1,0 +1,51 @@
+
+/*---------------------------------
+		Colors Variables
+-----------------------------------*/
+
+$black: var(--wp--preset--color--black);                     // #000
+$white: var(--wp--preset--color--white);                     // #fff
+$silver: var(--wp--preset--color--silver);                   // #ccc
+$bright-gray: var(--wp--preset--color--bright-gray);         // #eee
+$dark-charcoal: var(--wp--preset--color--dark-charcoal);     // #333
+$spanish-gray: var(--wp--preset--color--spanish-gray);       // #999
+$vivid-cyan-blue: var(--wp--preset--color--vivid-cyan-blue); // #0693e3
+$vivid-red: var(--wp--preset--color--vivid-red);             // #cf2e2e
+
+/*---------------------------------
+		Element Colors
+-----------------------------------*/
+
+// <body>
+$color__body-text: $spanish-gray;
+
+// <a>
+$color__link: $vivid-cyan-blue;
+$color__link-hover: $vivid-red;
+
+// <button>, input[type="button"], input[type="reset"], input[type="submit"]
+$color__background-button: $bright-gray;
+$color__background-button-hover: $bright-gray;
+$color__border-button: $dark-charcoal;
+$color__border-button-hover: $black;
+
+// input[type="text"], input[type="email"], input[type="url"],
+// input[type="password"], input[type="search"], input[type="tel"], textarea
+$color__border-input: $bright-gray;
+$color__text-input: $dark-charcoal;
+$color__text-input-focus: $black;
+
+// <pre>, <code>
+$color__background-pre: $bright-gray;
+
+// <hr>
+$color__background-hr: $bright-gray;
+
+/*---------------------------------
+		Border Colors
+-----------------------------------*/
+
+$color__border-light: $bright-gray;
+$color__border-fieldset: $silver;
+$color__border-table: $silver;
+$color__border-blockquote: $black;

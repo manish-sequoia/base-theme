@@ -1,0 +1,357 @@
+# Copyright (C) 2022 base-theme
+# This file is distributed under the same license as the base-theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: base-theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-08-19 11:10+0000\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:22
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: ../404.php:28
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: ../comments.php:42
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:35
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: ../comments.php:61, ../comments.php:91
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:64, ../comments.php:94
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:65, ../comments.php:95
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:108
+msgid "Comments are closed."
+msgstr ""
+
+#: ../header.php:35
+msgid "Skip to content"
+msgstr ""
+
+#: ../header.php:56, ../inc/classes/class-menu.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: ../inc/classes/class-base-theme.php:142
+msgid "Read More"
+msgstr ""
+
+#: ../inc/classes/class-widgets.php:51
+msgid "Sidebar"
+msgstr ""
+
+#: ../inc/classes/class-widgets.php:63
+msgid "Footer"
+msgstr ""
+
+#. translators: %s: post date.
+#: ../inc/helpers/template-tags.php:33
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: ../inc/helpers/template-tags.php:48
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: ../inc/helpers/template-tags.php:64
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: ../inc/helpers/template-tags.php:67
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: ../inc/helpers/template-tags.php:71
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: ../inc/helpers/template-tags.php:74
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: ../inc/helpers/template-tags.php:84
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: ../inc/helpers/template-tags.php:101
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme copyright date, 3: Theme author.
+#: ../inc/helpers/template-tags.php:182
+msgid "&copy; %1$s %2$s by %3$s"
+msgstr ""
+
+#. translators: Copyright date format, see https://secure.php.net/date
+#: ../inc/helpers/template-tags.php:185
+msgctxt "copyright date format"
+msgid "Y"
+msgstr ""
+
+#: ../inc/helpers/template-tags.php:187
+msgid "Base Theme"
+msgstr ""
+
+#: ../inc/helpers/template-tags.php:188
+msgid "Sequoia Capital"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:37
+msgctxt "Post Type General Name"
+msgid "Sample Post Types"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:38
+msgctxt "Post Type Singular Name"
+msgid "Sample Post Type"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:39
+msgid "Sample Post Types"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:40
+msgid "Sample Post Type"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:41, ../inc/classes/taxonomies/class-taxonomy-example.php:35
+msgid "Parent Item:"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:42, ../inc/classes/taxonomies/class-taxonomy-example.php:33
+msgid "All Items"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:43, ../inc/classes/taxonomies/class-taxonomy-example.php:37
+msgid "Add New Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:44
+msgid "Add New"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:45
+msgid "New Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:46, ../inc/classes/taxonomies/class-taxonomy-example.php:38
+msgid "Edit Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:47, ../inc/classes/taxonomies/class-taxonomy-example.php:40
+msgid "View Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:48
+msgid "Search Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:49
+msgid "Not found"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:50
+msgid "Not found in Trash"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:51
+msgid "Item Archives"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:52
+msgid "Item Attributes"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:53, ../inc/classes/taxonomies/class-taxonomy-example.php:39
+msgid "Update Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:54
+msgid "View Items"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:55
+msgid "Featured Image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:56
+msgid "Set featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:57
+msgid "Remove featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:58
+msgid "Use as featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:59
+msgid "Insert into item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:60
+msgid "Uploaded to this item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:61, ../inc/classes/taxonomies/class-taxonomy-example.php:48
+msgid "Items list"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:62, ../inc/classes/taxonomies/class-taxonomy-example.php:49
+msgid "Items list navigation"
+msgstr ""
+
+#: ../inc/classes/post-types/class-post-type-example.php:63
+msgid "Filter items list"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:30
+msgctxt "Taxonomy General Name"
+msgid "Sample Taxonomies"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:31
+msgctxt "Taxonomy Singular Name"
+msgid "Sample Taxonomy"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:32
+msgid "Sample Taxonomy"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:34
+msgid "Parent Item"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:36
+msgid "New Item Name"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:41
+msgid "Separate items with commas"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:42
+msgid "Add or remove items"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:43
+msgid "Choose from the most used"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:44
+msgid "Popular Items"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:45
+msgid "Search Items"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:46
+msgid "Not Found"
+msgstr ""
+
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:47
+msgid "No items"
+msgstr ""
+
+#: ../page-templates/fluid-width-template.php:3
+msgid "Fluid Width Template"
+msgstr ""
+
+#: ../page-templates/full-width-template.php:3
+msgid "Full Width Template"
+msgstr ""
+
+#. translators: %s: search phrase
+#: ../search.php:24
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:12
+msgid "Search For :"
+msgstr ""
+
+#: ../searchform.php:13
+msgid "Search..."
+msgstr ""
+
+#: ../searchform.php:13
+msgid "Search for:"
+msgstr ""
+
+#: ../searchform.php:15
+msgid "Search"
+msgstr ""
+
+#: ../template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../template-parts/content-none.php:45
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: ../template-parts/content-none.php:40
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: ../template-parts/content-none.php:26
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-page.php:20, ../template-parts/content-single.php:24, ../template-parts/content.php:47
+msgid "Pages:"
+msgstr ""
+
+#: ../template-parts/content-page.php:28
+msgid "Edit"
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: ../template-parts/content.php:34
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
