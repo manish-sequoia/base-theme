@@ -50,6 +50,7 @@ Please make sure you installed below software/packages/tools globally before mov
 2. PHPCS - https://github.com/squizlabs/PHP_CodeSniffer
 3. WordPress Coding Standards - https://github.com/WordPress/WordPress-Coding-Standards
 4. VIP Coding Standard (for WP VIP project only) - https://github.com/Automattic/VIP-Coding-Standards
+5. PHPCompatibilityWP - https://github.com/PHPCompatibility/PHPCompatibilityWP
 
 After cloning repo run following command,
 
