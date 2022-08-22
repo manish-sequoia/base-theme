@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-22 11:42+0000\n"
+"POT-Creation-Date: 2022-08-22 13:08+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -138,6 +138,98 @@ msgstr ""
 msgid "Sequoia Capital"
 msgstr ""
 
+#: ../inc/classes/post-types/class-base.php:117, ../inc/classes/taxonomies/class-base.php:100
+msgid "Parent Item:"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:118, ../inc/classes/taxonomies/class-base.php:98
+msgid "All Items"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:119, ../inc/classes/taxonomies/class-base.php:102
+msgid "Add New Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:120
+msgid "Add New"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:121
+msgid "New Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:122, ../inc/classes/taxonomies/class-base.php:103
+msgid "Edit Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:123, ../inc/classes/taxonomies/class-base.php:105
+msgid "View Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:124
+msgid "Search Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:125
+msgid "Not found"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:126
+msgid "Not found in Trash"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:127
+msgid "Item Archives"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:128
+msgid "Item Attributes"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:129, ../inc/classes/taxonomies/class-base.php:104
+msgid "Update Item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:130
+msgid "View Items"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:131
+msgid "Featured Image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:132
+msgid "Set featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:133
+msgid "Remove featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:134
+msgid "Use as featured image"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:135
+msgid "Insert into item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:136
+msgid "Uploaded to this item"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:137, ../inc/classes/taxonomies/class-base.php:113
+msgid "Items list"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:138, ../inc/classes/taxonomies/class-base.php:114
+msgid "Items list navigation"
+msgstr ""
+
+#: ../inc/classes/post-types/class-base.php:139
+msgid "Filter items list"
+msgstr ""
+
 #: ../inc/classes/post-types/class-post-type-example.php:37
 msgctxt "Post Type General Name"
 msgid "Sample Post Types"
@@ -156,146 +248,54 @@ msgstr ""
 msgid "Sample Post Type"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:41, ../inc/classes/taxonomies/class-taxonomy-example.php:35
-msgid "Parent Item:"
+#: ../inc/classes/taxonomies/class-base.php:99
+msgid "Parent Item"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:42, ../inc/classes/taxonomies/class-taxonomy-example.php:33
-msgid "All Items"
+#: ../inc/classes/taxonomies/class-base.php:101
+msgid "New Item Name"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:43, ../inc/classes/taxonomies/class-taxonomy-example.php:37
-msgid "Add New Item"
+#: ../inc/classes/taxonomies/class-base.php:106
+msgid "Separate items with commas"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:44
-msgid "Add New"
+#: ../inc/classes/taxonomies/class-base.php:107
+msgid "Add or remove items"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:45
-msgid "New Item"
+#: ../inc/classes/taxonomies/class-base.php:108
+msgid "Choose from the most used"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:46, ../inc/classes/taxonomies/class-taxonomy-example.php:38
-msgid "Edit Item"
+#: ../inc/classes/taxonomies/class-base.php:109
+msgid "Popular Items"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:47, ../inc/classes/taxonomies/class-taxonomy-example.php:40
-msgid "View Item"
+#: ../inc/classes/taxonomies/class-base.php:110
+msgid "Search Items"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:48
-msgid "Search Item"
+#: ../inc/classes/taxonomies/class-base.php:111
+msgid "Not Found"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:49
-msgid "Not found"
+#: ../inc/classes/taxonomies/class-base.php:112
+msgid "No items"
 msgstr ""
 
-#: ../inc/classes/post-types/class-post-type-example.php:50
-msgid "Not found in Trash"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:51
-msgid "Item Archives"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:52
-msgid "Item Attributes"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:53, ../inc/classes/taxonomies/class-taxonomy-example.php:39
-msgid "Update Item"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:54
-msgid "View Items"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:55
-msgid "Featured Image"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:56
-msgid "Set featured image"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:57
-msgid "Remove featured image"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:58
-msgid "Use as featured image"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:59
-msgid "Insert into item"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:60
-msgid "Uploaded to this item"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:61, ../inc/classes/taxonomies/class-taxonomy-example.php:48
-msgid "Items list"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:62, ../inc/classes/taxonomies/class-taxonomy-example.php:49
-msgid "Items list navigation"
-msgstr ""
-
-#: ../inc/classes/post-types/class-post-type-example.php:63
-msgid "Filter items list"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:30
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:37
 msgctxt "Taxonomy General Name"
 msgid "Sample Taxonomies"
 msgstr ""
 
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:31
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:38
 msgctxt "Taxonomy Singular Name"
 msgid "Sample Taxonomy"
 msgstr ""
 
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:32
+#: ../inc/classes/taxonomies/class-taxonomy-example.php:39
 msgid "Sample Taxonomy"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:34
-msgid "Parent Item"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:36
-msgid "New Item Name"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:41
-msgid "Separate items with commas"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:42
-msgid "Add or remove items"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:43
-msgid "Choose from the most used"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:44
-msgid "Popular Items"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:45
-msgid "Search Items"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:46
-msgid "Not Found"
-msgstr ""
-
-#: ../inc/classes/taxonomies/class-taxonomy-example.php:47
-msgid "No items"
 msgstr ""
 
 #: ../page-templates/fluid-width-template.php:3
