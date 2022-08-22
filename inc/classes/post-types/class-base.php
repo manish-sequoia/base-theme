@@ -107,8 +107,40 @@ abstract class Base {
 	 * To get list of labels for custom post type.
 	 * Must be in child class.
 	 *
+	 * @param array $labels Array of labels.
+	 *
 	 * @return array
 	 */
-	abstract public function get_labels();
+	public function get_labels( $labels = [] ) {
+
+		$defaults = [
+			'parent_item_colon'     => __( 'Parent Item:', 'base-theme' ),
+			'all_items'             => __( 'All Items', 'base-theme' ),
+			'add_new_item'          => __( 'Add New Item', 'base-theme' ),
+			'add_new'               => __( 'Add New', 'base-theme' ),
+			'new_item'              => __( 'New Item', 'base-theme' ),
+			'edit_item'             => __( 'Edit Item', 'base-theme' ),
+			'view_item'             => __( 'View Item', 'base-theme' ),
+			'search_items'          => __( 'Search Item', 'base-theme' ),
+			'not_found'             => __( 'Not found', 'base-theme' ),
+			'not_found_in_trash'    => __( 'Not found in Trash', 'base-theme' ),
+			'archives'              => __( 'Item Archives', 'base-theme' ),
+			'attributes'            => __( 'Item Attributes', 'base-theme' ),
+			'update_item'           => __( 'Update Item', 'base-theme' ),
+			'view_items'            => __( 'View Items', 'base-theme' ),
+			'featured_image'        => __( 'Featured Image', 'base-theme' ),
+			'set_featured_image'    => __( 'Set featured image', 'base-theme' ),
+			'remove_featured_image' => __( 'Remove featured image', 'base-theme' ),
+			'use_featured_image'    => __( 'Use as featured image', 'base-theme' ),
+			'insert_into_item'      => __( 'Insert into item', 'base-theme' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this item', 'base-theme' ),
+			'items_list'            => __( 'Items list', 'base-theme' ),
+			'items_list_navigation' => __( 'Items list navigation', 'base-theme' ),
+			'filter_items_list'     => __( 'Filter items list', 'base-theme' ),
+		];
+
+		return wp_parse_args( $labels, $defaults );
+
+	}
 
 }

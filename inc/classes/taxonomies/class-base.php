@@ -88,9 +88,35 @@ abstract class Base {
 	/**
 	 * Labels for taxonomy.
 	 *
+	 * @param array $labels Array of labels.
+	 *
 	 * @return array
 	 */
-	abstract public function get_labels();
+	public function get_labels( $labels = [] ) {
+
+		$defaults = [
+			'all_items'                  => __( 'All Items', 'base-theme' ),
+			'parent_item'                => __( 'Parent Item', 'base-theme' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'base-theme' ),
+			'new_item_name'              => __( 'New Item Name', 'base-theme' ),
+			'add_new_item'               => __( 'Add New Item', 'base-theme' ),
+			'edit_item'                  => __( 'Edit Item', 'base-theme' ),
+			'update_item'                => __( 'Update Item', 'base-theme' ),
+			'view_item'                  => __( 'View Item', 'base-theme' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'base-theme' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'base-theme' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'base-theme' ),
+			'popular_items'              => __( 'Popular Items', 'base-theme' ),
+			'search_items'               => __( 'Search Items', 'base-theme' ),
+			'not_found'                  => __( 'Not Found', 'base-theme' ),
+			'no_terms'                   => __( 'No items', 'base-theme' ),
+			'items_list'                 => __( 'Items list', 'base-theme' ),
+			'items_list_navigation'      => __( 'Items list navigation', 'base-theme' ),
+		];
+
+		return wp_parse_args( $labels, $defaults );
+
+	}
 
 	/**
 	 * List of post types for taxonomy.
