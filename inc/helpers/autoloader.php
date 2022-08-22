@@ -74,9 +74,9 @@ function autoloader( $resource = '' ) {
 	}
 
 	$resource_path_valid = validate_file( $resource_path );
-	// For Windows platform, validate_file returns 2 so we've added this condition as well.
+	// For Windows platform, validate_file returns 2, so we've added this condition as well.
 	if ( ! empty( $resource_path ) && file_exists( $resource_path ) && ( 0 === $resource_path_valid || 2 === $resource_path_valid ) ) {
-		// We are already making sure that the file exists and it's valid.
+		// We are already making sure that the file exists, and it's valid.
 		require_once $resource_path; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 	}
 
