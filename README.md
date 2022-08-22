@@ -61,6 +61,10 @@ npm install
 npm install --legacy-peer-deps
 ```
 
+#### Configure theme.json
+- https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
+- https://developer.wordpress.org/themes/advanced-topics/theme-json/
+
 #### Compile Assets
 
 ```
