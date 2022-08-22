@@ -57,7 +57,7 @@ After cloning repo run following command,
 ```bash
 npm install
 
-# if throw error in console, try below command
+# if throw error in terminal, try below command
 npm install --legacy-peer-deps
 ```
 
