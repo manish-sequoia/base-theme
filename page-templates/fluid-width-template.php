@@ -2,6 +2,8 @@
 /**
  * Template Name: Fluid Width Template
  *
+ * Template Post Type: post, page
+ *
  * Used for showing full width template
  *
  * @package Base-Theme
@@ -18,8 +20,15 @@ get_header();
 						while ( have_posts() ) {
 							the_post();
 
-							get_template_part( 'template-parts/content', 'page' );
+							if ( is_singular( 'post' ) ) {
 
+								get_template_part( 'template-parts/content', 'single' );
+
+							} else {
+
+								get_template_part( 'template-parts/content', 'page' );
+
+							}
 						}
 						?>
 					</main><!-- #main -->

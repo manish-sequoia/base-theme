@@ -121,6 +121,9 @@ class BASE_THEME {
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'align-wide' );
 
+		// Web Stories.
+		add_theme_support( 'web-stories' );
+
 		if ( ! isset( $content_width ) ) {
 
 			$content_width = 900;

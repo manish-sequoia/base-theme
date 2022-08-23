@@ -8,6 +8,7 @@
 namespace Base_Theme\Inc;
 
 use Base_Theme\Inc\Traits\Singleton;
+use Base_Theme\Inc\Post_Types\Post_Type_Adverts;
 use Base_Theme\Inc\Post_Types\Post_Type_Example;
 
 /**
@@ -33,6 +34,7 @@ class Post_Types {
 
 		// Load all post types.
 		Post_Type_Example::get_instance();
+		Post_Type_Adverts::get_instance();
 
 	}
 }
