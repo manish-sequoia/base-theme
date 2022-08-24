@@ -39,8 +39,6 @@ class ACF {
 
 		add_action( 'acf/init', [ $this, 'setup_option_page' ] );
 
-		add_action( 'acf/init', [ $this, 'add_hero_block' ] );
-
 	}
 
 	/**
@@ -82,25 +80,4 @@ class ACF {
 		}
 	}
 
-	/**
-	 * Register the custom hero block with ACF.
-	 */
-	public function add_hero_block() {
-
-		// Check function exists.
-		if ( function_exists( 'acf_register_block_type' ) ) {
-
-			// Register a custom block.
-			acf_register_block_type(
-				[
-					'name'            => 'hero',
-					'title'           => __( 'Hero', 'base-theme' ),
-					'description'     => __( 'A custom Hero Block.', 'base-theme' ),
-					'render_template' => 'template-parts/blocks/hero.php',
-					'category'        => 'formatting',
-					'keywords'        => [ 'hero' ],
-				]
-			);
-		}
-	}
 }
