@@ -26,6 +26,7 @@ class BASE_THEME {
 		Menu::get_instance();
 		Customizer::get_instance();
 		Widgets::get_instance();
+		Plugin_Configs::get_instance();
 		Post_Types::get_instance();
 		Taxonomies::get_instance();
 

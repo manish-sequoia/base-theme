@@ -208,7 +208,7 @@ class Taxonomy_Advert_Location extends Base {
 
 		global $pagenow;
 
-		if ( 'post.php' === $pagenow ) {
+		if ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) {
 
 			?><style>#bt-advert-location-adder{display:none;}</style><?php
 
