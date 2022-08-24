@@ -10,6 +10,7 @@ $base_theme_get_description = get_field( 'hero_description' );
 $base_theme_get_image       = get_field( 'hero_image' );
 
 if ( ! empty( $base_theme_get_image ) ) {
+	$base_theme_get_image        = wp_get_attachment_url( $base_theme_get_image, 'full' );
 	$base_theme_background_image = ' style="background-image: url( ' . esc_url( $base_theme_get_image ) . ' ); "';
 }
 ?>
