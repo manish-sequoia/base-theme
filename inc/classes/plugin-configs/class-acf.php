@@ -1,9 +1,9 @@
 <?php
 /**
-* ACF Plugin Config.
-*
-* @package Base-Theme
-*/
+ * ACF Plugin Config.
+ *
+ * @package Base-Theme
+ */
 
 namespace Base_Theme\Inc\Plugin_Configs;
 

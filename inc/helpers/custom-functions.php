@@ -12,6 +12,7 @@ use Base_Theme\Inc\Taxonomies\Taxonomy_Advert_Location;
  * Display advert.
  *
  * @param string $location Location slot(Taxonomy Term).
+ * @param bool   $display  Display the advert or return the advert markup.
  *
  * @return string Ad content.
  */
@@ -26,7 +27,7 @@ function bt_display_advert( $location = '', $display = true ) {
 				'post_type'      => Post_Type_Adverts::SLUG,
 				'post_status'    => 'publish',
 				'posts_per_page' => 10,
-				'tax_query'      => [
+				'tax_query'      => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					[
 						'taxonomy' => Taxonomy_Advert_Location::SLUG,
 						'field'    => 'slug',
@@ -44,7 +45,7 @@ function bt_display_advert( $location = '', $display = true ) {
 
 				if ( $display ) {
 
-					printf( '<div class="bt-advert %1$s">', $location );
+					printf( '<div class="bt-advert %1$s">', esc_attr( $location ) );
 
 					the_content();
 
@@ -54,8 +55,8 @@ function bt_display_advert( $location = '', $display = true ) {
 
 					$content .= sprintf(
 						'<div class="bt-advert %1$s">%2$s</div>',
-						$location,
-						apply_filters( 'the_content', get_the_content() )
+						esc_attr( $location ),
+						wp_kses_post( apply_filters( 'the_content', get_the_content() ) ) // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 					);
 				}
 			}
@@ -114,6 +115,7 @@ function bt_in_article_ads( $content ) {
 
 	return $contents;
 }
+
 add_filter( 'the_content', 'bt_in_article_ads' );
 
 /**
