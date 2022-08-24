@@ -5,9 +5,9 @@
  * @package Base-Theme
  */
 
-$advert = get_field( 'advert' );
+$base_theme_advert = get_field( 'advert' );
 
-if ( ! empty( $advert ) ) {
+if ( ! empty( $base_theme_advert ) ) {
 
 	if ( is_admin() ) {
 
@@ -15,6 +15,11 @@ if ( ! empty( $advert ) ) {
 
 	} else {
 
-		echo apply_filters( 'the_content', get_the_content( null, null, $advert ) );
+		echo wp_kses_post(
+			apply_filters(
+				'the_content', // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+				get_the_content( null, null, $base_theme_advert )
+			)
+		);
 	}
 }

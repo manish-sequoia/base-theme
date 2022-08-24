@@ -8,7 +8,7 @@
 ?>
 
 <aside id="secondary" role="complementary">
-	<?php bt_display_advert( 'before-sidebar' ); ?>
+	<?php base_theme_display_advert( 'before-sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	<?php bt_display_advert( 'after-sidebar' ); ?>
+	<?php base_theme_display_advert( 'after-sidebar' ); ?>
 </aside><!-- #secondary -->

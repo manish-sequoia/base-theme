@@ -1,9 +1,9 @@
 <?php
 /**
-* ACF Plugin Config.
-*
-* @package Base-Theme
-*/
+ * ACF Plugin Config.
+ *
+ * @package Base-Theme
+ */
 
 namespace Base_Theme\Inc\Plugin_Configs;
 
@@ -33,6 +33,7 @@ class ACF_Advert_Block {
 	protected function setup_hooks() {
 
 		add_action( 'acf/init', [ $this, 'advert_block' ] );
+
 	}
 
 	/**
@@ -42,25 +43,25 @@ class ACF_Advert_Block {
 
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
-			$settings = array(
+			$settings = [
 				'name'        => 'bt_advert_block',
 				'title'       => __( 'Advert Block', 'base-theme' ),
 				'description' => __( 'Advert Block to display ads on the front-end side.', 'base-theme' ),
 				'category'    => 'advert',
 				'icon'        => 'megaphone',
-				'keywords'    => array(
+				'keywords'    => [
 					'advert',
 					'ad',
 					'advertisement',
-				),
+				],
 				'mode'        => 'auto',
-				'supports'    => array(
+				'supports'    => [
 					'align'    => true,
 					'mode'     => true,
 					'multiple' => true,
 					'jsx'      => false,
-				),
-			);
+				],
+			];
 
 			$settings['render_template'] = $this->render_template_path( 'advert-block' );
 
@@ -71,11 +72,11 @@ class ACF_Advert_Block {
 	/**
 	 * Get absolute path to template for ACF block from block object.
 	 *
-	 * @param  string $name Name of the block.
+	 * @param string $name Name of the block.
 	 *
 	 * @return string Path to the template file, if it exists. Otherwise, empty string.
 	 */
-	function render_template_path( $name ) {
+	public function render_template_path( $name ) {
 
 		$relative_path = "/partials/blocks/{$name}.php";
 

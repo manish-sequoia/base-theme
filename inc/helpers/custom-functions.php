@@ -16,7 +16,7 @@ use Base_Theme\Inc\Taxonomies\Taxonomy_Advert_Location;
  *
  * @return string Ad content.
  */
-function bt_display_advert( $location = '', $display = true ) {
+function base_theme_display_advert( $location = '', $display = true ) {
 
 	$content = '';
 
@@ -78,7 +78,7 @@ function bt_display_advert( $location = '', $display = true ) {
  *
  * @return string
  */
-function bt_in_article_ads( $content ) {
+function base_theme_in_article_ads( $content ) {
 
 	if ( is_admin() ) {
 
@@ -103,7 +103,7 @@ function bt_in_article_ads( $content ) {
 
 		if ( 0 === $p_number % 2 && $p_number < $count_paragraph - 1 ) {
 
-			$contents .= bt_insert_post_ads( $paragraph );
+			$contents .= base_theme_insert_post_ads( $paragraph );
 
 			$ad_number++;
 
@@ -116,7 +116,7 @@ function bt_in_article_ads( $content ) {
 	return $contents;
 }
 
-add_filter( 'the_content', 'bt_in_article_ads' );
+add_filter( 'the_content', 'base_theme_in_article_ads' );
 
 /**
  * Ad prefixes.
@@ -125,7 +125,7 @@ add_filter( 'the_content', 'bt_in_article_ads' );
  *
  * @return string
  */
-function bt_insert_post_ads( $content ) {
+function base_theme_insert_post_ads( $content ) {
 
 	if ( is_admin() ) {
 
@@ -133,7 +133,7 @@ function bt_insert_post_ads( $content ) {
 
 	}
 
-	$ad_code_article = bt_display_advert( 'repeat-after-2-paragraphs', false );
+	$ad_code_article = base_theme_display_advert( 'repeat-after-2-paragraphs', false );
 
 	if ( is_single() ) {
 
