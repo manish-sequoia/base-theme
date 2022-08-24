@@ -88,7 +88,7 @@ class ACF {
 	public function add_hero_block() {
 
 		// Check function exists.
-		if( function_exists('acf_register_block_type') ) {
+		if( function_exists( 'acf_register_block_type' ) ) {
 	  
 			// Register a custom block.
 			acf_register_block_type(
@@ -98,7 +98,7 @@ class ACF {
 					'description'       => esc_html__( 'A custom Hero Block.', 'base-theme' ),
 					'render_template'   => 'template-parts/blocks/hero.php',
 					'category'          => 'formatting',
-					'keywords'          => array( 'hero' ),
+					'keywords'          => [ 'hero' ] ,
 				]
 			);
 		}
