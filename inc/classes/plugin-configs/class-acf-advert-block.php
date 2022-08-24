@@ -10,7 +10,7 @@ namespace Base_Theme\Inc\Plugin_Configs;
 use \Base_Theme\Inc\Traits\Singleton;
 
 /**
- * Class ACF
+ * Class Advert Block.
  */
 class ACF_Advert_Block {
 
@@ -36,7 +36,7 @@ class ACF_Advert_Block {
 	}
 
 	/**
-	 * Register Theme setting page with ACF.
+	 * Register Block.
 	 */
 	public function advert_block() {
 
