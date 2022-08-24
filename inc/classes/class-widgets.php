@@ -8,6 +8,7 @@
 namespace Base_Theme\Inc;
 
 use Base_Theme\Inc\Traits\Singleton;
+use Base_Theme\Inc\Widgets\Advert_Widget;
 
 /**
  * Class Widgets
@@ -19,7 +20,7 @@ class Widgets {
 	/**
 	 * Construct method.
 	 */
-	protected function __construct() {
+	public function __construct() {
 
 		$this->setup_hooks();
 
@@ -35,16 +36,17 @@ class Widgets {
 		/**
 		 * Actions
 		 */
+		add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 
 	}
 
 	/**
-	 * Register widgets.
+	 * Register sidebars.
 	 *
 	 * @action widgets_init
 	 */
-	public function register_widgets() {
+	public function register_sidebars() {
 
 		register_sidebar(
 			[
@@ -69,7 +71,16 @@ class Widgets {
 				'after_title'   => '</h4>',
 			]
 		);
+	}
 
+	/**
+	 * Register widgets.
+	 *
+	 * @action widgets_init
+	 */
+	public function register_widgets() {
+
+		register_widget( Advert_Widget::get_instance() );
 	}
 
 }

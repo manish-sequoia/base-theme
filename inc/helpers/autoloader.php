@@ -53,6 +53,7 @@ function autoloader( $resource = '' ) {
 
 			case 'post-types':
 			case 'taxonomies':
+			case 'widgets':
 			case 'plugin-configs':
 			case 'blocks': // phpcs:ignore PSR2.ControlStructures.SwitchDeclaration.TerminatingComment
 				/**
