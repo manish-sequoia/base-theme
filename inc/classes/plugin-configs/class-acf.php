@@ -82,20 +82,25 @@ class ACF {
 		}
 	}
 
+	/**
+	 * Register the custom hero block with ACF.
+	 */
 	public function add_hero_block() {
 
 		// Check function exists.
 		if( function_exists('acf_register_block_type') ) {
 	  
-		    // Register a custom block.
-		    acf_register_block_type(array(
-			  'name'              => 'hero',
-			  'title'             => __('Hero'),
-			  'description'       => __('A custom hero block.'),
-			  'render_template'   => 'template-parts/blocks/hero.php',
-			  'category'          => 'formatting',
-			  'keywords'          => array( 'hero' ),
-		    ));
+			// Register a custom block.
+			acf_register_block_type(
+				[
+					'name'              => 'hero',
+					'title'             => esc_html__( 'Hero', 'base-theme' ),
+					'description'       => esc_html__( 'A custom Hero Block.', 'base-theme' ),
+					'render_template'   => 'template-parts/blocks/hero.php',
+					'category'          => 'formatting',
+					'keywords'          => array( 'hero' ),
+				]
+			);
 		}
 	}
 }
