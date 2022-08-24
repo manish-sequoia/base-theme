@@ -7,6 +7,7 @@
 
 namespace Base_Theme\Inc;
 
+use Base_Theme\Inc\Plugin_Configs\ACF_Advert_Block;
 use Base_Theme\Inc\Traits\Singleton;
 
 use Base_Theme\Inc\Plugin_Configs\ACF;
@@ -24,6 +25,7 @@ class Plugin_Configs {
 	protected function __construct() {
 
 		ACF::get_instance();
+		ACF_Advert_Block::get_instance();
 
 	}
 
