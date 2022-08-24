@@ -5,7 +5,6 @@
  * @package Base-Theme
  */
 
-global $post;
 
 $get_hero_title_val = get_field( 'hero_title' );
 $get_hero_description_val = get_field( 'hero_description' );
