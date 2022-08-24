@@ -1,0 +1,44 @@
+{
+    "key": "group_6305b30c1ba76",
+    "title": "Page Option Fields",
+    "fields": [
+        {
+            "key": "field_6305b30c1dd86",
+            "label": "Simple Text Field - Page",
+            "name": "simple_text_field_page",
+            "type": "text",
+            "instructions": "This is simple text field present on Post Type Page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1661317968
+}

@@ -1,0 +1,44 @@
+{
+    "key": "group_6305b2dbee8d8",
+    "title": "Post Option Fields",
+    "fields": [
+        {
+            "key": "field_6305b2e603d3c",
+            "label": "Simple Text Field - Post",
+            "name": "simple_text_field_post",
+            "type": "text",
+            "instructions": "This is simple text field present on Post Type Post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1661317969
+}

@@ -1,0 +1,44 @@
+{
+    "key": "group_6305b2812bcc2",
+    "title": "Option Page Fields",
+    "fields": [
+        {
+            "key": "field_6305b297014a0",
+            "label": "Simple Text Field",
+            "name": "simple_text_field",
+            "type": "text",
+            "instructions": "This is simple text field added for Option page. This field value is present everywhere.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1661317966
+}
