@@ -169,14 +169,9 @@ class Taxonomy_Advert_Location extends Base {
 				'description' => 'After Content Image',
 			],
 			[
-				'title'       => 'Sidebar Block',
-				'slug'        => 'sidebar-block',
-				'description' => 'Sidebar Block',
-			],
-			[
-				'title'       => 'Content Block',
-				'slug'        => 'content-block',
-				'description' => 'Content Block',
+				'title'       => 'Advert Block',
+				'slug'        => 'advert-block',
+				'description' => 'Advert Block',
 			],
 			[
 				'title'       => 'Repeat After 2 Paragraphs',

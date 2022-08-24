@@ -31,6 +31,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 <div id="page" class="hfeed site">
 
+	<?php bt_display_advert( 'before-header' ); ?>
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'base-theme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
@@ -70,5 +72,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			</div>
 		</div>
 	</header><!-- #masthead -->
+
+	<?php bt_display_advert( 'after-header' ); ?>
 
 	<div id="content" class="site-content">

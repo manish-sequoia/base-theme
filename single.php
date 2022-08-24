@@ -10,6 +10,9 @@ get_header();
 	<div class="grid-container">
 		<div class="grid-x grid-margin-x">
 			<div class="cell small-12 medium-8 large-8">
+
+				<?php bt_display_advert( 'before-content' ); ?>
+
 				<div id="primary">
 					<main id="main" class="site-main" role="main">
 
@@ -40,6 +43,9 @@ get_header();
 						?>
 					</main><!-- #main -->
 				</div><!-- #primary -->
+
+				<?php bt_display_advert( 'after-content' ); ?>
+
 			</div>
 			<div class="cell small-12 medium-4 large-4">
 				<?php get_sidebar(); ?>

@@ -17,6 +17,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content clearfix">
+
+		<?php bt_display_advert( 'before-content-image' ); ?>
+
+		<?php the_post_thumbnail( 'full' ); ?>
+
+		<?php bt_display_advert( 'after-content-image' ); ?>
+
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
