@@ -79,12 +79,19 @@ function bt_display_advert( $location = '', $display = true ) {
  */
 function bt_in_article_ads( $content ) {
 
+	global $post;
+
 	if ( is_admin() ) {
 
 		return $content;
 	}
 
 	if ( ! is_single() ) {
+
+		return $content;
+	}
+
+	if ( 'bt-adverts' === $post->post_type ) {
 
 		return $content;
 	}
@@ -119,30 +126,30 @@ function bt_in_article_ads( $content ) {
 		$totals = array( $paragraphs );
 	} else {
 
-		$totals = array();
-
-		$i = 0;
-		$j = 0;
-
-		foreach ( $paragraphs as $paragraph ) {
-
-			if ( $i % 2 == 1 ) {
-				$j++;
-			}
-
-			$totals[ $j ][ $i ] = $paragraph;
-
-			$i++;
-		}
-
-//		$midpoint = floor( $count / 2 );
-//		$first = array_slice( $paragraphs, 0, $midpoint );
-//		if ( $count % 2 == 1 ) {
-//			$second = array_slice( $paragraphs, $midpoint, $midpoint, true );
-//		} else {
-//			$second = array_slice( $paragraphs, $midpoint, $midpoint - 1, true );
+//		$totals = array();
+//
+//		$i = 0;
+//		$j = 0;
+//
+//		foreach ( $paragraphs as $paragraph ) {
+//
+//			if ( $i % 2 == 1 ) {
+//				$j++;
+//			}
+//
+//			$totals[ $j ][ $i ] = $paragraph;
+//
+//			$i++;
 //		}
-//		$totals = array( $first, $second );
+
+		$midpoint = floor( $count / 2 );
+		$first = array_slice( $paragraphs, 0, $midpoint );
+		if ( $count % 2 == 1 ) {
+			$second = array_slice( $paragraphs, $midpoint, $midpoint, true );
+		} else {
+			$second = array_slice( $paragraphs, $midpoint, $midpoint - 1, true );
+		}
+		$totals = array( $first, $second );
 	}
 
 	$new_paras = array();
@@ -201,9 +208,9 @@ function bt_in_article_ads( $content ) {
 		 *
 		 *------------------------------------------------------------------------------*/
 		if ( 0 === $key_total ) {
-			$ad = array( 'ad1' => '<p>PLACE YOUR ADD NO 1 HERE</p>' );
+			$ad = array( 'ad1' => bt_insert_post_ads( $content ) );
 		} else {
-			$ad = array( 'ad2' => '<p>PLACE YOUR ADD NO 2 HERE</p>' );
+			$ad = array( 'ad2' => bt_insert_post_ads( $content ) );
 		}
 
 		/**-----------------------------------------------------------------------------
@@ -227,6 +234,8 @@ function bt_in_article_ads( $content ) {
 		}
 	}
 
+	$contents = '';
+
 	/**-----------------------------------------------------------------------------
 	 *
 	 *  $content should be a string, not an array. $new_paras is an array, which will
@@ -234,7 +243,10 @@ function bt_in_article_ads( $content ) {
 	 *  to $content which will be our new content
 	 *
 	 *------------------------------------------------------------------------------*/
-	$contents = implode( ' ', $new_paras );
+	if ( ! empty( $new_paras ) ) {
+
+		$contents = implode( ' ', $new_paras );
+	}
 
 	return $contents;
 }
@@ -255,17 +267,5 @@ function bt_insert_post_ads( $content ) {
 
 	}
 
-	$ad_code_article = bt_display_advert( 'repeat-after-2-paragraphs', false );
-
-	if ( is_single() ) {
-
-		$content = '</p>' . $ad_code_article;
-
-	} else {
-
-		$content = '</p>';
-
-	}
-
-	return $content;
+	return bt_display_advert( 'repeat-after-2-paragraphs', false );
 }
