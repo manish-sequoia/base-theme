@@ -8,6 +8,7 @@
 namespace Base_Theme\Inc;
 
 use Base_Theme\Inc\Plugin_Configs\ACF_Advert_Block;
+use Base_Theme\Inc\Plugin_Configs\ACF_Hero_Block;
 use Base_Theme\Inc\Traits\Singleton;
 
 use Base_Theme\Inc\Plugin_Configs\ACF;
@@ -26,7 +27,7 @@ class Plugin_Configs {
 
 		ACF::get_instance();
 		ACF_Advert_Block::get_instance();
-
+		ACF_Hero_Block::get_instance();
 	}
 
 }

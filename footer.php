@@ -15,7 +15,7 @@ if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 
 </div><!-- #content -->
 
-<?php bt_display_advert( 'before-footer' ); ?>
+<?php base_theme_display_advert( 'before-footer' ); ?>
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="<?php echo esc_attr( $base_theme_container_class ); ?>">
@@ -35,7 +35,7 @@ if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 
 </footer><!-- #colophon -->
 
-<?php bt_display_advert( 'after-footer' ); ?>
+<?php base_theme_display_advert( 'after-footer' ); ?>
 
 </div><!-- #page -->
 

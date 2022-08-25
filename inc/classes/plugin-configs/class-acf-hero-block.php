@@ -10,9 +10,9 @@ namespace Base_Theme\Inc\Plugin_Configs;
 use \Base_Theme\Inc\Traits\Singleton;
 
 /**
- * Class Advert Block.
+ * Class hero Block.
  */
-class ACF_Advert_Block {
+class ACF_Hero_Block {
 
 	use Singleton;
 
@@ -32,27 +32,24 @@ class ACF_Advert_Block {
 	 */
 	protected function setup_hooks() {
 
-		add_action( 'acf/init', [ $this, 'advert_block' ] );
+		add_action( 'acf/init', [ $this, 'hero_block' ] );
 
 	}
 
 	/**
 	 * Register Block.
 	 */
-	public function advert_block() {
+	public function hero_block() {
 
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			$settings = [
-				'name'        => 'bt_advert_block',
-				'title'       => __( 'Advert Block', 'base-theme' ),
-				'description' => __( 'Advert Block to display ads on the front-end side.', 'base-theme' ),
-				'category'    => 'advert',
-				'icon'        => 'megaphone',
+				'name'        => 'hero',
+				'title'       => __( 'Hero Block', 'base-theme' ),
+				'description' => __( 'A custom Hero Block.', 'base-theme' ),
+				'icon'        => 'cover-image',
 				'keywords'    => [
-					'advert',
-					'ad',
-					'advertisement',
+					'hero'
 				],
 				'mode'        => 'auto',
 				'supports'    => [
@@ -63,7 +60,7 @@ class ACF_Advert_Block {
 				],
 			];
 
-			$settings['render_template'] = $this->render_template_path( 'advert-block' );
+			$settings['render_template'] = $this->render_template_path( 'hero' );
 
 			acf_register_block_type( $settings );
 		}
