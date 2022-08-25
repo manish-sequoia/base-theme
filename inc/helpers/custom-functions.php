@@ -119,14 +119,30 @@ function bt_in_article_ads( $content ) {
 		$totals = array( $paragraphs );
 	} else {
 
-		$midpoint = floor( $count / 2 );
-		$first = array_slice( $paragraphs, 0, $midpoint );
-		if ( $count % 2 == 1 ) {
-			$second = array_slice( $paragraphs, $midpoint, $midpoint, true );
-		} else {
-			$second = array_slice( $paragraphs, $midpoint, $midpoint - 1, true );
+		$totals = array();
+
+		$i = 0;
+		$j = 0;
+
+		foreach ( $paragraphs as $paragraph ) {
+
+			if ( $i % 2 == 1 ) {
+				$j++;
+			}
+
+			$totals[ $j ][ $i ] = $paragraph;
+
+			$i++;
 		}
-		$totals = array( $first, $second );
+
+//		$midpoint = floor( $count / 2 );
+//		$first = array_slice( $paragraphs, 0, $midpoint );
+//		if ( $count % 2 == 1 ) {
+//			$second = array_slice( $paragraphs, $midpoint, $midpoint, true );
+//		} else {
+//			$second = array_slice( $paragraphs, $midpoint, $midpoint - 1, true );
+//		}
+//		$totals = array( $first, $second );
 	}
 
 	$new_paras = array();
