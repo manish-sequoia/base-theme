@@ -18,13 +18,18 @@
 
 	<div class="entry-content clearfix">
 
-		<?php base_theme_display_advert( 'before-content-image' ); ?>
+		<?php
+		if ( has_post_thumbnail() ) {
+			base_theme_display_advert( 'before-content-image' );
 
-		<?php the_post_thumbnail( 'full' ); ?>
+			the_post_thumbnail( 'full' );
 
-		<?php base_theme_display_advert( 'after-content-image' ); ?>
+			base_theme_display_advert( 'after-content-image' );
+		}
+		?>
 
 		<?php the_content(); ?>
+
 		<?php
 		wp_link_pages(
 			[
