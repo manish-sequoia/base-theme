@@ -18,6 +18,10 @@
 	display: inline;
 }
 
+.entry-header {
+	margin: 0 0 map.get($grid-column-gutter, small);
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -35,4 +39,15 @@
 
 .base-theme-pagination {
 	text-align: center;
+}
+
+.cat-links,
+.comments-link {
+	border-right: 1px solid $silver;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+
+.moretag {
+	margin-left: 5px;
 }
