@@ -25,5 +25,7 @@ object {
 }
 
 .site-content {
+	position: relative;
+	z-index: 3;
 	word-wrap: break-word;
 }
