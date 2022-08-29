@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-24 09:53+0000\n"
+"POT-Creation-Date: 2022-08-29 04:24+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -144,6 +144,14 @@ msgstr ""
 
 #: ../inc/classes/plugin-configs/class-acf-advert-block.php:49
 msgid "Advert Block to display ads on the front-end side."
+msgstr ""
+
+#: ../inc/classes/plugin-configs/class-acf-hero-block.php:48
+msgid "Hero Block"
+msgstr ""
+
+#: ../inc/classes/plugin-configs/class-acf-hero-block.php:49
+msgid "A custom Hero Block."
 msgstr ""
 
 #: ../inc/classes/plugin-configs/class-acf.php:73, ../inc/classes/plugin-configs/class-acf.php:74
@@ -387,7 +395,7 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../template-parts/content-page.php:20, ../template-parts/content-single.php:31, ../template-parts/content.php:47
+#: ../template-parts/content-page.php:20, ../template-parts/content-single.php:36, ../template-parts/content.php:47
 msgid "Pages:"
 msgstr ""
 
