@@ -99,15 +99,15 @@ function base_theme_in_article_ads( $content ) {
 
 	/**-----------------------------------------------------------------------------
 	 *
-	 *  wptexturize is applied to the $content. This inserts p tags that will help to
+	 *  Wptexturize is applied to the $content. This inserts p tags that will help to
 	 *  split the text into paragraphs. The text is split into paragraphs after each
 	 *  closing p tag. Remember, each double break constitutes a paragraph.
 	 *
-	 *  @todo If you really need to delete the attachments in paragraph one, you want
+	 * @todo If you really need to delete the attachments in paragraph one, you want
 	 *        to do it here before you start your foreach loop
 	 *
 	 *------------------------------------------------------------------------------*/
-	$closing_p = '</p>';
+	$closing_p  = '</p>';
 	$paragraphs = explode( $closing_p, wptexturize( $content ) );
 
 	/**-----------------------------------------------------------------------------
@@ -119,41 +119,34 @@ function base_theme_in_article_ads( $content ) {
 	 *  paragraph count is less than 4) or an array of the two separate sections of
 	 *  text
 	 *
-	 *  @todo Set paragraph count to suite your needs
+	 * @todo Set paragraph count to suite your needs
 	 *
 	 *------------------------------------------------------------------------------*/
 	$count = count( $paragraphs );
+
 	if ( 4 >= $count ) {
+
 		$totals = array( $paragraphs );
+
 	} else {
 
-//		$totals = array();
-//
-//		$i = 0;
-//		$j = 0;
-//
-//		foreach ( $paragraphs as $paragraph ) {
-//
-//			if ( $i % 2 == 1 ) {
-//				$j++;
-//			}
-//
-//			$totals[ $j ][ $i ] = $paragraph;
-//
-//			$i++;
-//		}
-
 		$midpoint = floor( $count / 2 );
-		$first = array_slice( $paragraphs, 0, $midpoint );
-		if ( $count % 2 == 1 ) {
+		$first    = array_slice( $paragraphs, 0, $midpoint );
+
+		if ( 1 === $count % 2 ) {
+
 			$second = array_slice( $paragraphs, $midpoint, $midpoint, true );
+
 		} else {
+
 			$second = array_slice( $paragraphs, $midpoint, $midpoint - 1, true );
+
 		}
-		$totals = array( $first, $second );
+
+		$totals = [ $first, $second ];
 	}
 
-	$new_paras = array();
+	$new_paras = [];
 
 	foreach ( $totals as $key_total => $total ) {
 
@@ -169,15 +162,21 @@ function base_theme_in_article_ads( $content ) {
 		 *  will go
 		 *  returned for this paragraph. ($p will hold these values for later checking)
 		 *
-		 *  @todo You can delete or add rules here to your liking
+		 * @todo You can delete or add rules here to your liking
 		 *
 		 *------------------------------------------------------------------------------*/
-		$p = array();
+		$p = [];
+
 		foreach ( $total as $key_paras => $paragraph ) {
+
 			if ( preg_match( '~<(?:img|ul|li|blockquote)[ >]~', $paragraph ) ) {
+
 				$p[ $key_paras ] = 0;
+
 			} else {
+
 				$p[ $key_paras ] = 1;
+
 			}
 		}
 
@@ -190,12 +189,18 @@ function base_theme_in_article_ads( $content ) {
 		 *  This means that no ad will be inserted in that section
 		 *
 		 *------------------------------------------------------------------------------*/
-		$m = array();
+		$m = [];
+
 		foreach ( $p as $key => $value ) {
+
 			if ( 1 === $value && array_key_exists( $key - 1, $p ) && $p[ $key ] === $p[ $key - 1 ] && ! $m ) {
+
 				$m[] = $key;
+
 			} elseif ( ! array_key_exists( $key + 1, $p ) && ! $m ) {
+
 				$m[] = 'no-ad';
+
 			}
 		}
 
@@ -204,14 +209,18 @@ function base_theme_in_article_ads( $content ) {
 		 *  Use two different ads, one for each section
 		 *  Only ad1 is displayed if there is less than 4 paragraphs
 		 *
-		 *  @todo Replace "PLACE YOUR ADD NO 1 HERE" with your add or code. Leave p tags
-		 *  @todo I will try to insert widgets here to make it dynamic
+		 * @todo Replace "PLACE YOUR ADD NO 1 HERE" with your add or code. Leave p tags
+		 * @todo I will try to insert widgets here to make it dynamic
 		 *
 		 *------------------------------------------------------------------------------*/
 		if ( 0 === $key_total ) {
+
 			$ad = array( 'ad1' => base_theme_insert_post_ads( $content ) );
+
 		} else {
+
 			$ad = array( 'ad2' => base_theme_insert_post_ads( $content ) );
+
 		}
 
 		/**-----------------------------------------------------------------------------
@@ -226,11 +235,16 @@ function base_theme_in_article_ads( $content ) {
 		 *
 		 *------------------------------------------------------------------------------*/
 		foreach ( $total as $key_para => $para ) {
-			if ( ! in_array( 'no_ad', $m ) && $key_para === $m[0] ) {
+
+			if ( ! in_array( 'no_ad', $m, true ) && $key_para === $m[0] ) {
+
 				$new_paras[ key( $ad ) ] = $ad[ key( $ad ) ];
-				$new_paras[ $key_para ] = $para;
+				$new_paras[ $key_para ]  = $para;
+
 			} else {
+
 				$new_paras[ $key_para ] = $para;
+
 			}
 		}
 	}
