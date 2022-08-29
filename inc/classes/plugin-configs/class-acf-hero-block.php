@@ -49,7 +49,7 @@ class ACF_Hero_Block {
 				'description' => __( 'A custom Hero Block.', 'base-theme' ),
 				'icon'        => 'cover-image',
 				'keywords'    => [
-					'hero'
+					'hero',
 				],
 				'mode'        => 'auto',
 				'supports'    => [

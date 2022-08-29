@@ -29,6 +29,7 @@ class BASE_THEME {
 		Plugin_Configs::get_instance();
 		Post_Types::get_instance();
 		Taxonomies::get_instance();
+		Web_Vitals::get_instance();
 
 		$this->setup_hooks();
 
