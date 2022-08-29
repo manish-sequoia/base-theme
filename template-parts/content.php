@@ -19,7 +19,9 @@
 
 	<?php
 	if ( ! is_single() && ! is_page() ) {
-		the_post_thumbnail();
+
+		the_post_thumbnail( 'large' );
+
 	}
 	?>
 
