@@ -1,16 +1,14 @@
 <?php
-
 /**
  * The template for displaying Blog category.
  *
  * @package Base-Theme
  */
+
 get_header();
-$queried_object = get_queried_object(); 
-$bt_category_image = get_field( 'image_cat',  $queried_object);
-if ( ! empty( $bt_category_image ) ) {
-	$base_theme_cat_image  = wp_get_attachment_url( $bt_category_image, 'full' );
-}
+
+$queried_object            = get_queried_object(); 
+$base_theme_category_image = get_field( 'image_cat',  $queried_object );
 ?>
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
@@ -36,7 +34,7 @@ if ( ! empty( $bt_category_image ) ) {
                                                       ?>
                                                 </div>
                                                 <div class="bt-cat-column">
-                                                      <?php echo '<img src="'. esc_url( $base_theme_cat_image ) .'"/>' ?>
+                                                      <?php echo wp_get_attachment_image( $base_theme_category_image, 'full' ); ?>
                                                 </div>
                                           </div>
 						</header><!-- .page-header -->

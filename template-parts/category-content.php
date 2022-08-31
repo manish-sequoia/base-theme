@@ -18,7 +18,7 @@ $bt_category_name = get_cat_name( get_queried_object_id() );
                               <?php $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'base-theme' ) );
                                     if ( $tags_list ) {
                                           /* translators: 1: list of tags. */
-                                         printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'base-theme' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                         printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'base-theme' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                     } 
                               ?>
                         </div>
