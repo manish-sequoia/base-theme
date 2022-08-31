@@ -5,7 +5,7 @@
 }
 
 .hentry {
-	margin: 0 0 map.get($grid-column-gutter, small);
+	margin: map.get($grid-column-gutter, small) 0;
 }
 
 .updated:not(.published) {

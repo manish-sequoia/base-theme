@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-31 10:25+0000\n"
+"POT-Creation-Date: 2022-08-31 11:27+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -28,13 +28,13 @@ msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: ../category.php:20, ../inc/helpers/template-tags.php:71, ../template-parts/category-content.php:18
+#: ../archive-web-stories.php:22, ../archive.php:22, ../category.php:20, ../inc/helpers/template-tags.php:71, ../template-parts/archive-content.php:35, ../template-parts/category-content.php:35
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: ../category.php:23, ../inc/helpers/template-tags.php:74
+#: ../archive-web-stories.php:25, ../archive.php:25, ../category.php:23, ../inc/helpers/template-tags.php:74
 msgid "Tagged %1$s"
 msgstr ""
 
@@ -146,12 +146,28 @@ msgstr ""
 msgid "Advert Block to display ads on the front-end side."
 msgstr ""
 
+#: ../inc/classes/plugin-configs/class-acf-featured-story.php:48
+msgid "Featured Story"
+msgstr ""
+
+#: ../inc/classes/plugin-configs/class-acf-featured-story.php:49
+msgid "Select featured story which will display in the front-end."
+msgstr ""
+
 #: ../inc/classes/plugin-configs/class-acf-hero-block.php:48
 msgid "Hero Block"
 msgstr ""
 
 #: ../inc/classes/plugin-configs/class-acf-hero-block.php:49
 msgid "A custom Hero Block."
+msgstr ""
+
+#: ../inc/classes/plugin-configs/class-acf-latest-stories-by-category.php:48, ../partials/blocks/latest-stories-by-category.php:40
+msgid "Latest Stories by Category"
+msgstr ""
+
+#: ../inc/classes/plugin-configs/class-acf-latest-stories-by-category.php:49
+msgid "Latest Stories will be displayed based on current post's category."
 msgstr ""
 
 #: ../inc/classes/plugin-configs/class-acf.php:73, ../inc/classes/plugin-configs/class-acf.php:74
@@ -358,6 +374,10 @@ msgstr ""
 msgid "Full Width Template"
 msgstr ""
 
+#: ../partials/blocks/latest-stories-by-category.php:10
+msgid "Latest Stories shown by post current category on the single post page."
+msgstr ""
+
 #. translators: %s: search phrase
 #: ../search.php:24
 msgid "Search Results for: %s"
@@ -379,16 +399,16 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../template-parts/category-content.php:15
+#: ../template-parts/archive-content.php:32, ../template-parts/category-content.php:32
 msgid "Written by:"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: ../template-parts/category-content.php:46, ../template-parts/content.php:36
+#: ../template-parts/category-content.php:55, ../template-parts/content.php:36
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../template-parts/category-content.php:59, ../template-parts/content-page.php:20, ../template-parts/content-single.php:36, ../template-parts/content.php:49
+#: ../template-parts/category-content.php:68, ../template-parts/content-page.php:20, ../template-parts/content-single.php:36, ../template-parts/content.php:49
 msgid "Pages:"
 msgstr ""
 
@@ -410,4 +430,12 @@ msgstr ""
 
 #: ../template-parts/content-page.php:28
 msgid "Edit"
+msgstr ""
+
+#: ../template-web-stories.php:3, ../template-web-stories.php:29
+msgid "Web Stories"
+msgstr ""
+
+#: ../template-web-stories.php:46
+msgid "View all stories"
 msgstr ""
