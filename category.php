@@ -15,17 +15,16 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 		<div class="cell small-12 medium-8 large-8">
 			<div id="primary">
 				<main id="main" class="site-main" role="main">
-                    <div class="tagList">
-                        <?php
-							$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'base-theme' ) );
-							if ( $tags_list ) {
-								/* translators: 1: list of tags. */
-								printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'base-theme' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-							}
-                        ?>
-                    </div>
+					<div class="tagList">
+						<?php
+						$base_theme_tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'base-theme' ) );
+						if ( $base_theme_tags_list ) {
+							/* translators: 1: list of tags. */
+							printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'base-theme' ) . '</span>', $base_theme_tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						}
+						?>
+					</div>
 					<?php if ( have_posts() ) { ?>
-
 						<header class="page-header">
                             <div class="bt-category-flex">
                                 <div class="bt-cat-column">
