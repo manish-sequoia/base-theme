@@ -26,17 +26,25 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 					</div>
 					<?php if ( have_posts() ) { ?>
 						<header class="page-header">
-                            <div class="bt-category-flex">
-                                <div class="bt-cat-column">
-                                    <?php
-                                    	the_archive_title( '<h1 class="page-title">', '</h1>' );
-                                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
-                                    ?>
-                                </div>
-								<div class="bt-cat-column">
-									<?php echo wp_get_attachment_image( $base_theme_category_image, 'full' ); ?>
+							<div class="grid-container">
+								<div class="grid-x grid-margin-x">
+									<div class="cell small-12 medium-6">
+										<?php
+										the_archive_title( '<h1 class="page-title">', '</h1>' );
+										the_archive_description( '<div class="taxonomy-description">', '</div>' );
+										?>
+									</div>
+									<div class="cell small-12 medium-6">
+										<?php
+										if ( ! empty( $base_theme_category_image ) ) {
+
+											echo wp_get_attachment_image( $base_theme_category_image, 'full' );
+
+										}
+										?>
+									</div>
 								</div>
-                            </div>
+							</div>
 						</header><!-- .page-header -->
 
 						<?php

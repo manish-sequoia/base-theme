@@ -12,16 +12,17 @@ $base_theme_category_name = get_cat_name( get_queried_object_id() );
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php if ( 'post' === get_post_type() ) { ?>
 			<div class="entry-meta">
-                <?php esc_html_e( 'Written by:', 'base-theme' ); ?> <?php base_theme_posted_by(); ?> | <?php base_theme_posted_on(); ?><br> 
-                <div class="tagList">
-                	<?php 
-						$base_theme_tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'base-theme' ) );
-                        if ( $base_theme_tags_list ) {
-                            /* translators: 1: list of tags. */
-                            printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'base-theme' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                        }
-                    ?>
-                </div>
+				<?php esc_html_e( 'Written by:', 'base-theme' ); ?> <?php base_theme_posted_by(); ?> | <?php base_theme_posted_on(); ?><br>
+				<div class="tagList">
+					<?php
+					$base_theme_tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'base-theme' ) );
+
+					if ( $base_theme_tags_list ) {
+						/* translators: 1: list of tags. */
+						printf( '<span class="tags-links">%s</span>', $base_theme_tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
+					?>
+				</div>
 			</div><!-- .entry-meta -->
 		<?php } ?>
 	</header><!-- .entry-header -->
