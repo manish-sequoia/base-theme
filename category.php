@@ -7,8 +7,9 @@
 
 get_header();
 
-$base_theme_queried_object = get_queried_object();
-$base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object );
+$base_theme_queried_object    = get_queried_object();
+$base_theme_queried_object_id = get_queried_object_id();
+$base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_object );
 ?>
 <div class="grid-container">
 	<div class="grid-x grid-margin-x">
@@ -22,6 +23,18 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 							/* translators: 1: list of tags. */
 							printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'base-theme' ) . '</span>', $base_theme_tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
+						?>
+					</div>
+					<div class="subcategory_block">
+						<?php
+						wp_list_categories(
+							[
+								'orderby'            => 'id',
+								'show_count'         => false,
+								'use_desc_for_title' => false,
+								'child_of'           => $base_theme_queried_object_id,
+							]
+						);
 						?>
 					</div>
 					<?php if ( have_posts() ) { ?>
