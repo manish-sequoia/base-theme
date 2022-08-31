@@ -25,7 +25,7 @@ if ( is_admin() ) {
 
 	if ( ! is_wp_error( $base_theme_category_ids ) && ! empty( $base_theme_category_ids ) ) {
 
-		$query = new WP_Query(
+		$base_theme_query = new WP_Query(
 			array(
 				'post_type'      => 'post',
 				'post_status'    => 'publish',
@@ -34,7 +34,7 @@ if ( is_admin() ) {
 			)
 		);
 
-		if ( $query->have_posts() ) {
+		if ( $base_theme_query->have_posts() ) {
 			?>
 
 			<h2><?php esc_html_e( 'Latest Stories by Category', 'base-theme' ); ?></h2>
@@ -45,9 +45,9 @@ if ( is_admin() ) {
 
 				$base_theme_i = 0;
 
-				while ( $query->have_posts() ) {
+				while ( $base_theme_query->have_posts() ) {
 
-					$query->the_post();
+					$base_theme_query->the_post();
 
 					if ( $base_theme_i >= 5 ) {
 						break;
