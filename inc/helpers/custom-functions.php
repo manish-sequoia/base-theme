@@ -43,20 +43,68 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 				$query->the_post();
 
+				$post_id = get_the_ID();
+
+				$start_date_time   = get_field( 'advert_start_date_time', $post_id );
+				$end_date_time     = get_field( 'advert_end_date_time', $post_id );
+				$current_date_time = strtotime( 'now' );
+
+				$default_ad = get_field( 'default_ad', $post_id );
+
+				$show_content = false;
+
+				if ( empty( $start_date_time ) && empty( $end_date_time ) ) {
+
+					$show_content = true;
+
+				} elseif ( ! empty( $start_date_time ) && empty( $end_date_time ) ) {
+
+					if ( $current_date_time > strtotime( $start_date_time ) ) {
+
+						$show_content = true;
+					}
+				} elseif ( empty( $start_date_time ) && ! empty( $end_date_time ) ) {
+
+					if ( $current_date_time < strtotime( $end_date_time ) ) {
+
+						$show_content = true;
+					}
+				} elseif ( ! empty( $start_date_time ) && ! empty( $end_date_time ) ) {
+
+					if (
+						$current_date_time > strtotime( $start_date_time ) &&
+						$current_date_time < strtotime( $end_date_time )
+					) {
+
+						$show_content = true;
+					}
+				}
+
 				if ( $display ) {
 
 					printf( '<div class="bt-advert %1$s">', esc_attr( $location ) );
 
-					the_content();
+					if ( $show_content ) {
+						the_content();
+					} else {
+						echo wp_kses_post( $default_ad );
+					}
 
 					echo '</div>';
 
 				} else {
 
+					$default_content = $default_ad;
+
+					if ( $show_content ) {
+
+						$default_content = apply_filters( 'the_content', get_the_content() ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+					}
+
 					$content .= sprintf(
 						'<div class="bt-advert %1$s">%2$s</div>',
 						esc_attr( $location ),
-						wp_kses_post( apply_filters( 'the_content', get_the_content() ) ) // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+						wp_kses_post( $default_content )
 					);
 				}
 			}
