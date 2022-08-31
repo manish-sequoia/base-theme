@@ -26,13 +26,13 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 						?>
 					</div>
 					<div class="subcategory_block">
-						<?php 
-						wp_list_categories( 
+						<?php
+						wp_list_categories(
 							[
 								'orderby'            => 'id',
 								'show_count'         => false,
 								'use_desc_for_title' => false,
-								'child_of'           => $base_theme_queried_object_id
+								'child_of'           => $base_theme_queried_object_id,
 							]
 						);
 						?>
