@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF Plugin Config.
+ * ACF Featured Story.
  *
  * @package Base-Theme
  */
@@ -10,9 +10,9 @@ namespace Base_Theme\Inc\Plugin_Configs;
 use \Base_Theme\Inc\Traits\Singleton;
 
 /**
- * Class Advert Block.
+ * Class Featured Story Block.
  */
-class ACF_Advert_Block {
+class ACF_Featured_Story {
 
 	use Singleton;
 
@@ -32,38 +32,39 @@ class ACF_Advert_Block {
 	 */
 	protected function setup_hooks() {
 
-		add_action( 'acf/init', [ $this, 'advert_block' ] );
+		add_action( 'acf/init', [ $this, 'block' ] );
 
 	}
 
 	/**
 	 * Register Block.
 	 */
-	public function advert_block() {
+	public function block() {
 
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			$settings = [
-				'name'        => 'bt_advert_block',
-				'title'       => __( 'Advert Block', 'base-theme' ),
-				'description' => __( 'Advert Block to display ads on the front-end side.', 'base-theme' ),
-				'category'    => 'advert',
-				'icon'        => 'megaphone',
+				'name'        => 'bt_featured_story',
+				'title'       => __( 'Featured Story', 'base-theme' ),
+				'description' => __( 'Select featured story which will display in the front-end.', 'base-theme' ),
+				'category'    => 'featured-story',
+				'icon'        => 'admin-post',
 				'keywords'    => [
-					'advert',
-					'ad',
-					'advertisement',
+					'featured-story',
+					'featured',
+					'story',
+					'stories',
 				],
 				'mode'        => 'auto',
 				'supports'    => [
-					'align'    => true,
-					'mode'     => true,
+					'align'    => false,
+					'mode'     => false,
 					'multiple' => true,
 					'jsx'      => false,
 				],
 			];
 
-			$settings['render_template'] = base_theme_render_template_path( 'advert-block' );
+			$settings['render_template'] = base_theme_render_template_path( 'featured-story' );
 
 			acf_register_block_type( $settings );
 		}

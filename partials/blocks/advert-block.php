@@ -1,6 +1,6 @@
 <?php
 /**
- * Advert block widget.
+ * Advert block.
  *
  * @package Base-Theme
  */
