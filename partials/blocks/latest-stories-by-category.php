@@ -1,6 +1,6 @@
 <?php
 /**
- * Advert block widget.
+ * Latest Stories by Category Widget.
  *
  * @package Base-Theme
  */

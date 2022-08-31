@@ -1,6 +1,6 @@
 <?php
 /**
- * Latest stories by category block.
+ * ACF Featured Story.
  *
  * @package Base-Theme
  */
@@ -10,9 +10,9 @@ namespace Base_Theme\Inc\Plugin_Configs;
 use \Base_Theme\Inc\Traits\Singleton;
 
 /**
- * Class Latest Stories by Category Block.
+ * Class Featured Story Block.
  */
-class ACF_Latest_Stories_By_Category {
+class ACF_Featured_Story {
 
 	use Singleton;
 
@@ -44,26 +44,27 @@ class ACF_Latest_Stories_By_Category {
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			$settings = [
-				'name'        => 'bt_latest_stories_by_category',
-				'title'       => __( 'Latest Stories by Category', 'base-theme' ),
-				'description' => __( 'Latest Stories will be displayed based on current post\'s category.', 'base-theme' ),
-				'category'    => 'latest-stories',
-				'icon'        => 'list-view',
+				'name'        => 'bt_featured_story',
+				'title'       => __( 'Featured Story', 'base-theme' ),
+				'description' => __( 'Select featured story which will display in the front-end.', 'base-theme' ),
+				'category'    => 'featured-story',
+				'icon'        => 'admin-post',
 				'keywords'    => [
-					'latest-stories',
-					'category',
+					'featured-story',
+					'featured',
+					'story',
 					'stories',
 				],
 				'mode'        => 'auto',
 				'supports'    => [
 					'align'    => false,
 					'mode'     => false,
-					'multiple' => false,
+					'multiple' => true,
 					'jsx'      => false,
 				],
 			];
 
-			$settings['render_template'] = base_theme_render_template_path( 'latest-stories-by-category' );
+			$settings['render_template'] = base_theme_render_template_path( 'featured-story' );
 
 			acf_register_block_type( $settings );
 		}
