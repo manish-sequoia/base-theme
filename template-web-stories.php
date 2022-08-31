@@ -5,7 +5,6 @@
  * @package Base-Theme
  */
 
-
 get_header();
 
 $base_theme_queried_object = get_queried_object();
@@ -34,7 +33,7 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 						</header><!-- .page-header -->
 
 						<?php
-						$story_query_attrs = [
+						$base_theme_story_query_attrs = array(
 							'view_type'          => 'grid', // Possible values: circles, grid, carousel, list.
 							'number_of_columns'  => 2,
 							'show_title'         => true,
@@ -44,13 +43,15 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 							'show_archive_link'  => false,
 							'sharp_corners'      => false,
 							'archive_link_label' => __( 'View all stories', 'base-theme' ),
-						];
+						);
 
-						$story_query_args  = [ 'posts_per_page' => 8 ];
-						$story_query       = new \Google\Web_Stories\Story_Query( $story_query_attrs, $story_query_args );
+						$base_theme_story_query_args = array(
+							'posts_per_page' => 8,
+						);
+						$base_theme_story_query      = new \Google\Web_Stories\Story_Query( $base_theme_story_query_attrs, $base_theme_story_query_args );
 
-						$renderer = new Base_Theme\Inc\Web_Stories_Renderer( $story_query );
-						echo $renderer->render();
+						$base_theme_renderer = new Base_Theme\Inc\Web_Stories_Renderer( $base_theme_story_query );
+						echo $base_theme_renderer->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						?>
 
 					</main><!-- #main -->
