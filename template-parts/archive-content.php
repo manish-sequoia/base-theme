@@ -45,37 +45,7 @@ $base_theme_category_name = get_cat_name( get_queried_object_id() );
 			</header><!-- .entry-header -->
 
 			<div class="entry-content clearfix">
-				<?php
-				if ( is_single() || is_page() ) {
-
-					the_content(
-						sprintf(
-							wp_kses(
-							/* translators: %s: Name of current post. */
-								__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'base-theme' ),
-								[
-									'span' => [
-										'class' => [],
-									],
-								]
-							),
-							the_title( '<span class="screen-reader-text">"', '"</span>', false )
-						)
-					);
-
-					wp_link_pages(
-						[
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'base-theme' ),
-							'after'  => '</div>',
-						]
-					);
-
-				} else {
-
-					the_excerpt();
-
-				}
-				?>
+				<?php the_excerpt(); ?>
 			</div><!-- .entry-content -->
 
 		</div>
