@@ -60,28 +60,9 @@ class ACF_Hero_Block {
 				],
 			];
 
-			$settings['render_template'] = $this->render_template_path( 'hero' );
+			$settings['render_template'] = base_theme_render_template_path( 'hero' );
 
 			acf_register_block_type( $settings );
 		}
-	}
-
-	/**
-	 * Get absolute path to template for ACF block from block object.
-	 *
-	 * @param string $name Name of the block.
-	 *
-	 * @return string Path to the template file, if it exists. Otherwise, empty string.
-	 */
-	public function render_template_path( $name ) {
-
-		$relative_path = "/partials/blocks/{$name}.php";
-
-		if ( file_exists( get_theme_file_path( $relative_path ) ) ) {
-
-			return get_theme_file_path( $relative_path );
-		}
-
-		return '';
 	}
 }

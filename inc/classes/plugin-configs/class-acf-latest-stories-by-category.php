@@ -12,7 +12,7 @@ use \Base_Theme\Inc\Traits\Singleton;
 /**
  * Class Advert Block.
  */
-class ACF_Advert_Block {
+class ACF_Latest_Stories_By_Category {
 
 	use Singleton;
 
@@ -32,38 +32,38 @@ class ACF_Advert_Block {
 	 */
 	protected function setup_hooks() {
 
-		add_action( 'acf/init', [ $this, 'advert_block' ] );
+		add_action( 'acf/init', [ $this, 'block' ] );
 
 	}
 
 	/**
 	 * Register Block.
 	 */
-	public function advert_block() {
+	public function block() {
 
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			$settings = [
-				'name'        => 'bt_advert_block',
-				'title'       => __( 'Advert Block', 'base-theme' ),
-				'description' => __( 'Advert Block to display ads on the front-end side.', 'base-theme' ),
-				'category'    => 'advert',
-				'icon'        => 'megaphone',
+				'name'        => 'bt_latest_stories_by_category',
+				'title'       => __( 'Latest Stories by Category', 'base-theme' ),
+				'description' => __( 'Latest Stories will be displayed based on current post\'s category.', 'base-theme' ),
+				'category'    => 'latest-stories',
+				'icon'        => 'list-view',
 				'keywords'    => [
-					'advert',
-					'ad',
-					'advertisement',
+					'latest-stories',
+					'category',
+					'stories',
 				],
 				'mode'        => 'auto',
 				'supports'    => [
-					'align'    => true,
-					'mode'     => true,
-					'multiple' => true,
+					'align'    => false,
+					'mode'     => false,
+					'multiple' => false,
 					'jsx'      => false,
 				],
 			];
 
-			$settings['render_template'] = base_theme_render_template_path( 'advert-block' );
+			$settings['render_template'] = base_theme_render_template_path( 'latest-stories-by-category' );
 
 			acf_register_block_type( $settings );
 		}

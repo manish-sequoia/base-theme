@@ -9,6 +9,28 @@ use Base_Theme\Inc\Post_Types\Post_Type_Adverts;
 use Base_Theme\Inc\Taxonomies\Taxonomy_Advert_Location;
 
 /**
+ * Get absolute path to template for ACF block from block object.
+ *
+ * @param string $name Name of the block.
+ *
+ * @return string Path to the template file, if it exists. Otherwise, empty string.
+ */
+function base_theme_render_template_path( $name = '' ) {
+
+	if ( ! empty( $name ) ) {
+
+		$relative_path = "/partials/blocks/{$name}.php";
+
+		if ( file_exists( get_theme_file_path( $relative_path ) ) ) {
+
+			return get_theme_file_path( $relative_path );
+		}
+	}
+
+	return '';
+}
+
+/**
  * Display advert.
  *
  * @param string $location Location slot(Taxonomy Term).
