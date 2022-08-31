@@ -95,7 +95,6 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 				$default_ad = get_field( 'default_ad', $post_id );
 
-
 				$show_content = false;
 
 				if ( empty( $start_date_time ) && empty( $end_date_time ) ) {
