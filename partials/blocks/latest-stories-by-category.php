@@ -9,22 +9,28 @@ if ( is_admin() ) {
 
 	printf( '<h3>%1$s</h3>', esc_html__( 'Latest Stories shown by post current category on the single post page.', 'base-theme' ) );
 
-} else if ( is_singular( 'post' ) ) {
+} elseif ( is_singular( 'post' ) ) {
 
 	global $post;
 
-	$current_post_id = $post->ID;
+	$base_theme_current_post_id = $post->ID;
 
-	$category_ids = wp_get_post_categories( $current_post_id, array( 'fields' => 'ids', 'number' => 1 ) );
+	$base_theme_category_ids = wp_get_post_categories(
+		$base_theme_current_post_id,
+		array(
+			'fields' => 'ids',
+			'number' => 1,
+		)
+	);
 
-	if ( ! is_wp_error( $category_ids ) && ! empty( $category_ids ) ) {
+	if ( ! is_wp_error( $base_theme_category_ids ) && ! empty( $base_theme_category_ids ) ) {
 
 		$query = new WP_Query(
 			array(
 				'post_type'      => 'post',
 				'post_status'    => 'publish',
 				'posts_per_page' => 6,
-				'cat'            => $category_ids[0],
+				'cat'            => $base_theme_category_ids[0],
 			)
 		);
 
@@ -37,29 +43,29 @@ if ( is_admin() ) {
 
 				<?php
 
-				$i = 0;
+				$base_theme_i = 0;
 
 				while ( $query->have_posts() ) {
 
 					$query->the_post();
 
-					if ( $i >= 5 ) {
+					if ( $base_theme_i >= 5 ) {
 						break;
 					}
 
-					if ( $current_post_id === get_the_ID() ) {
+					if ( get_the_ID() === $base_theme_current_post_id ) {
 						continue;
 					}
 					?>
 
 						<li>
-							<a class="wp-block-latest-posts__post-title" href="<?php echo get_the_permalink(); ?>">
+							<a class="wp-block-latest-posts__post-title" href="<?php echo esc_url( get_the_permalink() ); ?>">
 								<?php the_title(); ?>
 							</a>
 						</li>
 
 					<?php
-					$i++;
+					$base_theme_i++;
 				}
 				?>
 
