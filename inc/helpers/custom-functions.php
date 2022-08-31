@@ -71,6 +71,28 @@ function base_theme_display_advert( $location = '', $display = true ) {
 				$end_date_time     = get_field( 'advert_end_date_time', $post_id );
 				$current_date_time = strtotime( 'now' );
 
+				$show_device_specific_advert = get_field( 'show_device_specific_advert', $post_id );
+
+				$ad_display_classes = '';
+
+				if ( $show_device_specific_advert ) {
+
+					$ad_show_on = get_field( 'ad_show_on', $post_id );
+
+					if ( ! empty( $ad_show_on ) ) {
+
+						if ( 'mobile' === $ad_show_on ) {
+
+							$ad_display_classes = 'show-for-small-only';
+						}
+
+						if ( 'desktop' === $ad_show_on ) {
+
+							$ad_display_classes = 'hide-for-small-only';
+						}
+					}
+				}
+
 				$default_ad = get_field( 'default_ad', $post_id );
 
 				$show_content = false;
@@ -104,7 +126,11 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 				if ( $display ) {
 
-					printf( '<div class="bt-advert %1$s">', esc_attr( $location ) );
+					printf(
+						'<div class="bt-advert %1$s %2$s">',
+						esc_attr( $location ),
+						esc_attr( $ad_display_classes )
+					);
 
 					if ( $show_content ) {
 						the_content();
@@ -124,8 +150,9 @@ function base_theme_display_advert( $location = '', $display = true ) {
 					}
 
 					$content .= sprintf(
-						'<div class="bt-advert %1$s">%2$s</div>',
+						'<div class="bt-advert %1$s %2$s">%3$s</div>',
 						esc_attr( $location ),
+						esc_attr( $ad_display_classes ),
 						wp_kses_post( $default_content )
 					);
 				}

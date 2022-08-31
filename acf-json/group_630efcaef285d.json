@@ -38,7 +38,7 @@
         },
         {
             "key": "field_630efd3b79ab1",
-            "label": "Default Ad",
+            "label": "Default Advert",
             "name": "default_ad",
             "type": "wysiwyg",
             "instructions": "",
@@ -67,6 +67,57 @@
             "toolbar": "basic",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_630f4f4325d6a",
+            "label": "Show Device Specific Advert",
+            "name": "show_device_specific_advert",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_630f4c53743ad",
+            "label": "Advert Show On",
+            "name": "ad_show_on",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_630f4f4325d6a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "desktop": "Desktop",
+                "mobile": "Mobile"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -87,5 +138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661938323
+    "modified": 1661947999
 }
