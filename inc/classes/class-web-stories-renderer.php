@@ -102,7 +102,16 @@ class Web_Stories_Renderer implements Renderer {
 			<div class="grid-x grid-margin-x">
 
 				<div class="cell small-12 medium-3">
-					<?php echo wp_kses_post( get_the_post_thumbnail( $this->current_story->ID, 'full' ) ); ?>
+					<?php
+					if ( has_post_thumbnail( $this->current_story->ID ) ) {
+
+						echo wp_kses_post( get_the_post_thumbnail( $this->current_story->ID, 'full' ) );
+
+					} else {
+
+						base_theme_placeholder_image();
+					}
+					?>
 				</div>
 
 				<div class="cell small-12 medium-9">

@@ -18,7 +18,14 @@ $base_theme_category_name = get_cat_name( get_queried_object_id() );
 			<?php
 			if ( ! is_single() && ! is_page() ) {
 
-				the_post_thumbnail( 'large' );
+				if ( has_post_thumbnail() ) {
+
+					the_post_thumbnail( 'large' );
+
+				} else {
+
+					base_theme_placeholder_image();
+				}
 			}
 			?>
 		</div>
