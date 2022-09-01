@@ -25,18 +25,6 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 						}
 						?>
 					</div>
-					<div class="subcategory_block">
-						<?php
-						wp_list_categories(
-							[
-								'orderby'            => 'id',
-								'show_count'         => false,
-								'use_desc_for_title' => false,
-								'child_of'           => $base_theme_queried_object_id,
-							]
-						);
-						?>
-					</div>
 					<?php if ( have_posts() ) { ?>
 						<header class="page-header">
 							<div class="grid-x grid-margin-x">
@@ -52,11 +40,32 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 
 										echo wp_get_attachment_image( $base_theme_category_image, 'full' );
 
+									} else {
+
+										base_theme_placeholder_image();
 									}
 									?>
 								</div>
 							</div>
 						</header><!-- .page-header -->
+
+						<hr />
+
+						<div class="subcategory_block">
+							<strong><?php esc_html_e( 'Sub Category: ', 'base-theme' ); ?></strong>
+							<?php
+							wp_list_categories(
+								[
+									'orderby'            => 'id',
+									'show_count'         => false,
+									'use_desc_for_title' => false,
+									'separator'          => '  |  ',
+									'child_of'           => $base_theme_queried_object_id,
+									'style'              => 'none',
+								]
+							);
+							?>
+						</div>
 
 						<?php
 							/* Start the Loop */

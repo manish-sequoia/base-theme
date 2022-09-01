@@ -382,3 +382,14 @@ function base_theme_insert_post_ads( $content ) {
 
 	return base_theme_display_advert( 'repeat-after-2-paragraphs', false );
 }
+
+/**
+ * Display placeholder image.
+ */
+function base_theme_placeholder_image() {
+
+	printf(
+		'<img src="%1$s" alt="placeholder image"/>',
+		esc_url( get_template_directory_uri() . '/assets/img/placeholder.png' )
+	);
+}
