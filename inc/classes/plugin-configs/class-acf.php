@@ -39,6 +39,8 @@ class ACF {
 
 		add_action( 'acf/init', [ $this, 'setup_option_page' ] );
 
+		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'acf_wysiwyg_toolbars' ] );
+
 	}
 
 	/**
@@ -78,6 +80,21 @@ class ACF {
 				]
 			);
 		}
+	}
+
+	/**
+	 * Add or alter existing toolbars for ACF WYSIWYG.
+	 *
+	 * @param array $toolbars ACF WYSIWYG toolbars.
+	 *
+	 * @return mixed
+	 */
+	function acf_wysiwyg_toolbars( $toolbars ) {
+
+		$toolbars['Base - Simple']    = array();
+		$toolbars['Base - Simple'][1] = array( 'link' );
+
+		return $toolbars;
 	}
 
 }

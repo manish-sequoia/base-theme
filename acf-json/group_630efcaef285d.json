@@ -3,6 +3,44 @@
     "title": "Advert Fields",
     "fields": [
         {
+            "key": "field_6311d13075682",
+            "label": "Advert",
+            "name": "advert",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "base_simple",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6311d16875684",
+            "label": "Advert Mobile(Optional)",
+            "name": "advert_mobile",
+            "type": "wysiwyg",
+            "instructions": "NOTE: Set this field if you want to show different advert in the mobile.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "base_simple",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_630efcbd5a77c",
             "label": "Start Date & Time",
             "name": "advert_start_date_time",
@@ -37,11 +75,43 @@
             "first_day": 1
         },
         {
-            "key": "field_630efd3b79ab1",
-            "label": "Default Advert",
-            "name": "default_ad",
+            "key": "field_6311d1c675686",
+            "label": "Schedule Advert",
+            "name": "schedule_advert",
             "type": "wysiwyg",
             "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_630efcbd5a77c",
+                        "operator": "!=empty"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_630efcf95a77d",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "base_simple",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6311d1d775687",
+            "label": "Schedule Advert Mobile(Optional)",
+            "name": "schedule_advert_mobile",
+            "type": "wysiwyg",
+            "instructions": "NOTE: Set this field if you want to show different advert in the mobile.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -64,60 +134,9 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 1,
+            "toolbar": "base_simple",
+            "media_upload": 0,
             "delay": 0
-        },
-        {
-            "key": "field_630f4f4325d6a",
-            "label": "Show Device Specific Advert",
-            "name": "show_device_specific_advert",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_630f4c53743ad",
-            "label": "Advert Show On",
-            "name": "ad_show_on",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_630f4f4325d6a",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "desktop": "Desktop",
-                "mobile": "Mobile"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
         }
     ],
     "location": [
@@ -138,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661947999
+    "modified": 1662115866
 }
