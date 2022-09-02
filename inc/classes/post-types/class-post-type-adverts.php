@@ -56,7 +56,7 @@ class Post_Type_Adverts extends Base {
 		return array_merge(
 			$args,
 			[
-				'supports'            => [ 'title', 'editor' ],
+				'supports'            => [ 'title' ],
 				'menu_icon'           => 'dashicons-megaphone',
 				'public'              => false,
 				'show_ui'             => true,

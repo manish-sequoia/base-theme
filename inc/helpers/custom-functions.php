@@ -48,7 +48,8 @@ function base_theme_display_advert( $location = '', $display = true ) {
 			[
 				'post_type'      => Post_Type_Adverts::SLUG,
 				'post_status'    => 'publish',
-				'posts_per_page' => 10,
+				'posts_per_page' => 100,
+				'fields'         => 'ids',
 				'tax_query'      => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					[
 						'taxonomy' => Taxonomy_Advert_Location::SLUG,
@@ -59,59 +60,36 @@ function base_theme_display_advert( $location = '', $display = true ) {
 			]
 		);
 
-		if ( $query->have_posts() ) {
+		if ( ! empty( $query->posts ) ) {
 
-			while ( $query->have_posts() ) {
+			foreach ( $query->posts as $post_id ) {
 
-				$query->the_post();
-
-				$post_id = get_the_ID();
+				// advert
+				// advert_mobile
+				// schedule_advert
+				// schedule_advert_mobile
 
 				$start_date_time   = get_field( 'advert_start_date_time', $post_id );
 				$end_date_time     = get_field( 'advert_end_date_time', $post_id );
 				$current_date_time = strtotime( 'now' );
 
-				$show_device_specific_advert = get_field( 'show_device_specific_advert', $post_id );
-
-				$ad_display_classes = '';
-
-				if ( $show_device_specific_advert ) {
-
-					$ad_show_on = get_field( 'ad_show_on', $post_id );
-
-					if ( ! empty( $ad_show_on ) ) {
-
-						if ( 'mobile' === $ad_show_on ) {
-
-							$ad_display_classes = 'show-for-small-only';
-						}
-
-						if ( 'desktop' === $ad_show_on ) {
-
-							$ad_display_classes = 'hide-for-small-only';
-						}
-					}
-				}
-
-				$default_ad = get_field( 'default_ad', $post_id );
-
-				$show_content = false;
+				$show_main_advert = false;
 
 				if ( empty( $start_date_time ) && empty( $end_date_time ) ) {
 
-					$show_content = true;
+					$show_main_advert = true;
 
 				} elseif ( ! empty( $start_date_time ) && empty( $end_date_time ) ) {
 
 					if ( $current_date_time > strtotime( $start_date_time ) ) {
 
-						$show_content = true;
+						$show_main_advert = true;
 					}
 				} elseif ( empty( $start_date_time ) && ! empty( $end_date_time ) ) {
 
 					if ( $current_date_time < strtotime( $end_date_time ) ) {
 
-						$show_content = true;
+						$show_main_advert = true;
 					}
 				} elseif ( ! empty( $start_date_time ) && ! empty( $end_date_time ) ) {
 
@@ -120,41 +98,31 @@ function base_theme_display_advert( $location = '', $display = true ) {
 						$current_date_time < strtotime( $end_date_time )
 					) {
 
-						$show_content = true;
+						$show_main_advert = true;
 					}
+				}
+
+				if ( $show_main_advert ) {
+
+					$advert        = get_field( 'advert', $post_id );
+					$advert_mobile = get_field( 'advert_mobile', $post_id );
+
+				} else {
+
+					$advert        = get_field( 'schedule_advert', $post_id );
+					$advert_mobile = get_field( 'schedule_advert_mobile', $post_id );
 				}
 
 				if ( $display ) {
 
-					printf(
-						'<div class="bt-advert %1$s %2$s">',
-						esc_attr( $location ),
-						esc_attr( $ad_display_classes )
-					);
-
-					if ( $show_content ) {
-						the_content();
-					} else {
-						echo wp_kses_post( $default_ad );
-					}
-
-					echo '</div>';
+					// Ads should not be escaped.
+					echo base_theme_get_advert( $location, 'hide-for-small-only', $advert ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 				} else {
 
-					$default_content = $default_ad;
-
-					if ( $show_content ) {
-
-						$default_content = apply_filters( 'the_content', get_the_content() ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-					}
-
-					$content .= sprintf(
-						'<div class="bt-advert %1$s %2$s">%3$s</div>',
-						esc_attr( $location ),
-						esc_attr( $ad_display_classes ),
-						wp_kses_post( $default_content )
-					);
+					$content .= base_theme_get_advert( $location, 'hide-for-small-only', $advert );
+					$content .= base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile );
 				}
 			}
 
@@ -166,6 +134,25 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 		return $content;
 	}
+}
+
+/**
+ * Get advert markup.
+ *
+ * @param string $location       Advert Location.
+ * @param string $advert_class   Advert class.
+ * @param string $advert_content Advert content.
+ *
+ * @return string
+ */
+function base_theme_get_advert( $location, $advert_class, $advert_content ) {
+
+	return sprintf(
+		'<div class="bt-advert %1$s %2$s">%3$s</div>',
+		esc_attr( $location ),
+		esc_attr( $advert_class ),
+		$advert_content
+	);
 }
 
 /**
