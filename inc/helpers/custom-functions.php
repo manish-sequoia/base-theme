@@ -115,14 +115,29 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 				if ( $display ) {
 
-					// Ads should not be escaped.
-					echo base_theme_get_advert( $location, 'hide-for-small-only', $advert ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					if ( ! empty( $advert ) ) {
+
+						// Ads should not be escaped.
+						echo base_theme_get_advert( $location, 'hide-for-small-only', $advert ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
+
+					if ( ! empty( $advert_mobile ) ) {
+
+						// Ads should not be escaped.
+						echo base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
 
 				} else {
 
-					$content .= base_theme_get_advert( $location, 'hide-for-small-only', $advert );
-					$content .= base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile );
+					if ( ! empty( $advert ) ) {
+
+						$content .= base_theme_get_advert( $location, 'hide-for-small-only', $advert );
+					}
+
+					if ( ! empty( $advert_mobile ) ) {
+
+						$content .= base_theme_get_advert( $location, 'show-for-small-only', $advert_mobile );
+					}
 				}
 			}
 
