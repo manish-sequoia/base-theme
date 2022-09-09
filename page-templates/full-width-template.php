@@ -17,6 +17,8 @@ get_header();
 				<div id="primary">
 					<main id="main" class="site-main" role="main">
 						<?php
+							get_template_part( 'partials/social-icons', 'single'  );
+
 						while ( have_posts() ) {
 							the_post();
 
