@@ -178,6 +178,16 @@ class Taxonomy_Advert_Location extends Base {
 				'slug'        => 'repeat-after-2-paragraphs',
 				'description' => 'Repeat After 2 Paragraphs',
 			],
+			[
+				'title'       => 'Advert in Archive Listing',
+				'slug'        => 'advert-archive-listing',
+				'description' => 'Advert will add in archive list after every 4th article.',
+			],
+			[
+				'title'       => 'Popup Advert',
+				'slug'        => 'popup-advert',
+				'description' => 'Add will show in the center of the page as popup',
+			],
 		];
 
 		foreach ( $locations as $location ) {

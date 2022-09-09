@@ -44,11 +44,18 @@ function base_theme_display_advert( $location = '', $display = true ) {
 
 	if ( ! empty( $location ) ) {
 
+		$posts_per_page = 100;
+
+		if ( 'popup-advert' === $location ) {
+
+			$posts_per_page = 1;
+		}
+
 		$query = new WP_Query(
 			[
 				'post_type'      => Post_Type_Adverts::SLUG,
 				'post_status'    => 'publish',
-				'posts_per_page' => 100,
+				'posts_per_page' => $posts_per_page,
 				'fields'         => 'ids',
 				'tax_query'      => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					[
