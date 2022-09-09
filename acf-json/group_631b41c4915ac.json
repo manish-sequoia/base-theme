@@ -1,0 +1,48 @@
+{
+    "key": "group_631b41c4915ac",
+    "title": "Read This Article",
+    "fields": [
+        {
+            "key": "field_631b41fbaeaad",
+            "label": "Select Article",
+            "name": "read_this_article",
+            "type": "post_object",
+            "instructions": "Select a story which will display in the front-end, mostly this will be used in the between of the articles.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/bt-read-this"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1662730847
+}
