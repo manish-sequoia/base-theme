@@ -74,7 +74,9 @@ class ACF_Popular_Posts {
 	}
 
 	/**
-	 * Positron functions and definitions
+	 * Set post view count.
+	 *
+	 * @param int $post_id Post id.
 	 */
 	public function set_post_views( $post_id ) {
 
@@ -97,14 +99,22 @@ class ACF_Popular_Posts {
 		}
 	}
 
+	/**
+	 * Track post views.
+	 *
+	 * @param int $post_id Post id.
+	 */
 	public function track_post_views( $post_id ) {
 
 		if ( ! is_single() ) {
+
 			return;
 		}
 
 		if ( empty ( $post_id ) ) {
+
 			global $post;
+
 			$post_id = $post->ID;
 		}
 
