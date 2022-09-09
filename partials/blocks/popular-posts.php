@@ -1,6 +1,6 @@
 <?php
 /**
- * Featured block.
+ * Popular Posts block.
  *
  * @package Base-Theme
  */

@@ -12,6 +12,7 @@ use Base_Theme\Inc\Plugin_Configs\ACF_Featured_Story;
 use Base_Theme\Inc\Plugin_Configs\ACF_Hero_Block;
 use Base_Theme\Inc\Plugin_Configs\ACF_Latest_Stories_By_Category;
 use Base_Theme\Inc\Plugin_Configs\ACF_Popular_Posts;
+use Base_Theme\Inc\Plugin_Configs\ACF_Read_This;
 use Base_Theme\Inc\Traits\Singleton;
 
 use Base_Theme\Inc\Plugin_Configs\ACF;
@@ -34,6 +35,7 @@ class Plugin_Configs {
 		ACF_Latest_Stories_By_Category::get_instance();
 		ACF_Featured_Story::get_instance();
 		ACF_Popular_Posts::get_instance();
+		ACF_Read_This::get_instance();
 	}
 
 }
