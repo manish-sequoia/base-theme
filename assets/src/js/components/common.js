@@ -12,7 +12,29 @@ const common = {
 	 */
 	init() {
 
-		return true;
+		// Get the modal
+		const modal = document.getElementById( 'popup_advert_modal' );
+
+		// Get the <span> element that closes the modal
+		const modalClose = document.getElementById( 'popup_advert_close' );
+
+		// When the user clicks on <span> (x), close the modal
+		modalClose.onclick = function() {
+
+			modal.style.display = 'none';
+
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function( event) {
+
+			if ( modal === event.target ) {
+
+				modal.style.display = 'none';
+
+			}
+
+		}
 
 	},
 

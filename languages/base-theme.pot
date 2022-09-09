@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-31 11:27+0000\n"
+"POT-Creation-Date: 2022-09-09 12:41+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -28,14 +28,18 @@ msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: ../archive-web-stories.php:22, ../archive.php:22, ../category.php:20, ../inc/helpers/template-tags.php:71, ../template-parts/archive-content.php:35, ../template-parts/category-content.php:35
+#: ../archive.php:22, ../category.php:21, ../inc/helpers/template-tags.php:71, ../template-parts/category-content.php:42
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: ../archive-web-stories.php:25, ../archive.php:25, ../category.php:23, ../inc/helpers/template-tags.php:74
+#: ../archive.php:25, ../category.php:24, ../inc/helpers/template-tags.php:74
 msgid "Tagged %1$s"
+msgstr ""
+
+#: ../category.php:55
+msgid "Sub Category: "
 msgstr ""
 
 #. translators: 1: number of comments, 2: post title
@@ -170,7 +174,7 @@ msgstr ""
 msgid "Latest Stories will be displayed based on current post's category."
 msgstr ""
 
-#: ../inc/classes/plugin-configs/class-acf.php:73, ../inc/classes/plugin-configs/class-acf.php:74
+#: ../inc/classes/plugin-configs/class-acf.php:75, ../inc/classes/plugin-configs/class-acf.php:76
 msgid "Theme Settings"
 msgstr ""
 
@@ -399,16 +403,16 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../template-parts/archive-content.php:32, ../template-parts/category-content.php:32
+#: ../template-parts/category-content.php:39
 msgid "Written by:"
 msgstr ""
 
 #. translators: %s: Name of current post.
-#: ../template-parts/category-content.php:55, ../template-parts/content.php:36
+#: ../template-parts/category-content.php:62, ../template-parts/content.php:36
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../template-parts/category-content.php:68, ../template-parts/content-page.php:20, ../template-parts/content-single.php:36, ../template-parts/content.php:49
+#: ../template-parts/category-content.php:75, ../template-parts/content-page.php:20, ../template-parts/content-single.php:36, ../template-parts/content.php:49
 msgid "Pages:"
 msgstr ""
 
@@ -432,10 +436,10 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../template-web-stories.php:3, ../template-web-stories.php:29
+#: ../template-web-stories.php:3, ../template-web-stories.php:28
 msgid "Web Stories"
 msgstr ""
 
-#: ../template-web-stories.php:46
+#: ../template-web-stories.php:45
 msgid "View all stories"
 msgstr ""
