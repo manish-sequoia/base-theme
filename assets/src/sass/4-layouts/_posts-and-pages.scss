@@ -50,3 +50,11 @@
 .moretag {
 	margin-left: 5px;
 }
+
+.read-this-article {
+	display: flex;
+
+	&-link {
+		margin-left: 0.5rem;
+	}
+}

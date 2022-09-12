@@ -37,6 +37,30 @@ if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 
 <?php base_theme_display_advert( 'after-footer' ); ?>
 
+<?php
+$popup_advert = base_theme_display_advert( 'popup-advert', false );
+
+if ( ! empty( $popup_advert ) ) {
+	?>
+
+	<!-- The Modal -->
+	<div id="popup_advert_modal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+
+			<span id="popup_advert_close" class="close">&times;</span>
+
+			<?php echo wp_kses_post( $popup_advert ); ?>
+
+		</div>
+
+	</div>
+
+	<?php
+}
+?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

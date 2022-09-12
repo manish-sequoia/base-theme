@@ -48,6 +48,9 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 							</header><!-- .page-header -->
 
 							<?php
+
+							$i = 1;
+
 							/* Start the Loop */
 							while ( have_posts() ) {
 
@@ -60,6 +63,14 @@ $base_theme_category_image = get_field( 'image_cat', $base_theme_queried_object 
 								 */
 								get_template_part( 'template-parts/content', get_post_format() );
 
+								if ( 0 === $i % 4 ) {
+
+									echo '<hr />';
+
+									base_theme_display_advert( 'advert-archive-listing' );
+								}
+
+								$i++;
 							}
 							?>
 
