@@ -429,7 +429,7 @@ function base_theme_get_related_posts() {
 
 		$related_posts = new WP_Query(
 			array(
-				'posts_per_page' => 3,
+				'posts_per_page' => 4,
 				'cat'            => $current_terms[0],
 			)
 		);
