@@ -36,6 +36,21 @@ const common = {
 
 		}
 
+		window.onload = function() {
+
+			setTimeout(
+
+				function() {
+
+					modal.style.display = 'block'
+
+				},
+
+				5000
+			);
+
+		}
+
 	},
 
 };
