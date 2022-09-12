@@ -402,3 +402,82 @@ function base_theme_placeholder_image() {
 		esc_url( get_template_directory_uri() . '/assets/img/placeholder.png' )
 	);
 }
+
+/**
+ * Handle Sub-Category menu position.
+ */
+function base_theme_admin_menu() {
+
+	global $submenu;
+
+	$found  = false;
+	$before = array();
+	$after  = array();
+
+	foreach ( $submenu['edit.php'] as $item ) {
+
+		if ( ! $found || $item[2] === 'edit-tags.php?taxonomy=' . Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category::SLUG ) {
+
+			$before[] = $item;
+
+		} else {
+
+			$after[] = $item;
+
+		}
+
+		if ( $item[2] === 'edit-tags.php?taxonomy=category' ) {
+
+			$found = true;
+		}
+	}
+
+	$submenu['edit.php'] = array_values( array_merge( $before, $after ) );
+}
+add_action( 'admin_menu', 'base_theme_admin_menu', 1 );
+
+/**
+ * Filters the Sub-Category archive permalink.
+ *
+ * @param string  $link     Term link URL.
+ * @param WP_Term $term     Term object.
+ * @param string  $taxonomy Taxonomy slug.
+ */
+function base_theme_term_link( $link, $term, $taxonomy ) {
+
+	$category_slug = Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category::SLUG;
+
+	if ( $category_slug === $taxonomy ) {
+
+		$base_theme_queried_object = get_queried_object();
+
+		if ( str_contains( $link, '/' . $category_slug . '/' ) ) {
+
+			$replace_string = '/' . $base_theme_queried_object->taxonomy . '/' . $base_theme_queried_object->slug . '/';
+
+			$link = str_replace( '/' . $category_slug . '/', $replace_string, $link );
+		}
+
+	}
+
+	return $link;
+}
+
+/**
+ * Add custom rewrite rule for Sub Category.
+ */
+function base_theme_sub_category_rewrite_rule() {
+
+	$sub_category_slug = Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category::SLUG;
+
+	// category/CATEGORY_SLUG/SUB_CATEGORY_SLUG/page/PAGE_NUMBER/
+	add_rewrite_rule( 'category/(.+?)/(.+?)/page/?([0-9]{1,})/?$', 'index.php?category_name=$matches[1]&' . $sub_category_slug . '=$matches[2]&paged=$matches[3]', 'top' );
+
+	// category/CATEGORY_SLUG/page/PAGE_NUMBER/
+	add_rewrite_rule( 'category/(.+?)/page/?([0-9]{1,})/?$', 'index.php?category_name=$matches[1]&paged=$matches[2]', 'top' );
+
+	// category/CATEGORY_SLUG/SUB_CATEGORY_SLUG/
+	add_rewrite_rule( 'category/(.+?)/(.+?)/?$', 'index.php?category_name=$matches[1]&' . $sub_category_slug . '=$matches[2]', 'top' );
+
+}
+add_action( 'init', 'base_theme_sub_category_rewrite_rule', 1 );
