@@ -432,7 +432,7 @@ function base_theme_admin_menu() {
 		}
 	}
 
-	$submenu['edit.php'] = array_values( array_merge( $before, $after ) );
+	$submenu['edit.php'] = array_values( array_merge( $before, $after ) ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 }
 add_action( 'admin_menu', 'base_theme_admin_menu', 1 );
 

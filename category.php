@@ -66,30 +66,22 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 
 								foreach ( $base_theme_sub_categories as $base_theme_sub_category ) {
 
-									add_filter( 'term_link', 'base_theme_term_link', 10, 3 );
+									$base_theme_sub_category_link = get_term_link( $base_theme_sub_category );
 
-									printf(
-										'<a href="%1$s">%2$s</a> |  ',
-										esc_url( get_term_link( $base_theme_sub_category ) ),
-										esc_html( $base_theme_sub_category->name )
-									);
+									if ( ! is_wp_error( $base_theme_sub_category_link ) && ! empty( $base_theme_sub_category_link ) ) {
 
-									remove_filter( 'term_link', 'base_theme_term_link' );
+										add_filter( 'term_link', 'base_theme_term_link', 10, 3 );
+
+										printf(
+											'<a href="%1$s">%2$s</a> |  ',
+											esc_url( $base_theme_sub_category_link ),
+											esc_html( $base_theme_sub_category->name )
+										);
+
+										remove_filter( 'term_link', 'base_theme_term_link' );
+									}
 								}
 							}
-
-//							wp_list_categories(
-//								[
-//									'orderby'            => 'name',
-//									'show_count'         => false,
-//									'use_desc_for_title' => false,
-//									'separator'          => '  |  ',
-//									'style'              => 'none',
-//									'taxonomy'           => Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category::SLUG,
-//								]
-//							);
-//
-
 							?>
 						</div>
 
