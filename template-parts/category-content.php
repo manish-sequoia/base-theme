@@ -13,24 +13,25 @@ $base_theme_category_name = get_cat_name( get_queried_object_id() );
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="grid-x grid-margin-x">
+		<?php $base_theme_medium_block = 'medium-12';
+		if ( has_post_thumbnail() ) { 
+			$base_theme_medium_block = 'medium-9';
+		?>
+			<div class="cell small-12 medium-3">
+				<?php
+				if ( ! is_single() && ! is_page() ) {
 
-		<div class="cell small-12 medium-3">
-			<?php
-			if ( ! is_single() && ! is_page() ) {
+					if ( has_post_thumbnail() ) {
 
-				if ( has_post_thumbnail() ) {
+						the_post_thumbnail( 'large' );
 
-					the_post_thumbnail( 'large' );
-
-				} else {
-
-					base_theme_placeholder_image();
+					}
 				}
-			}
-			?>
-		</div>
+				?>
+			</div>
+		<?php } ?>
 
-		<div class="cell small-12 medium-9">
+		<div class="cell small-12 <?php echo esc_html_e( $base_theme_medium_block ); ?>">
 
 			<header class="entry-header">
 				<?php the_title( sprintf( '<h2 class="entry-title" style="margin-top: 0;"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
