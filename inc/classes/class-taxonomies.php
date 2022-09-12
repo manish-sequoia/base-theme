@@ -9,7 +9,7 @@ namespace Base_Theme\Inc;
 
 use Base_Theme\Inc\Traits\Singleton;
 use Base_Theme\Inc\Taxonomies\Taxonomy_Advert_Location;
-use Base_Theme\Inc\Taxonomies\Taxonomy_Example;
+use Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category;
 
 /**
  * Class Taxonomies
@@ -33,8 +33,8 @@ class Taxonomies {
 	public function load_taxonomies() {
 
 		// Load all taxonomies classes.
-		Taxonomy_Example::get_instance();
 		Taxonomy_Advert_Location::get_instance();
+		Taxonomy_Sub_Category::get_instance();
 
 	}
 }

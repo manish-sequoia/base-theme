@@ -52,18 +52,36 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 						<hr />
 
 						<div class="subcategory_block">
+
 							<strong><?php esc_html_e( 'Sub Category: ', 'base-theme' ); ?></strong>
+
 							<?php
-							wp_list_categories(
-								[
-									'orderby'            => 'id',
-									'show_count'         => false,
-									'use_desc_for_title' => false,
-									'separator'          => '  |  ',
-									'child_of'           => $base_theme_queried_object_id,
-									'style'              => 'none',
-								]
+							$base_theme_sub_categories = get_terms(
+								array(
+									'taxonomy' => Base_Theme\Inc\Taxonomies\Taxonomy_Sub_Category::SLUG,
+								)
 							);
+
+							if ( ! is_wp_error( $base_theme_sub_categories ) && ! empty( $base_theme_sub_categories ) ) {
+
+								foreach ( $base_theme_sub_categories as $base_theme_sub_category ) {
+
+									$base_theme_sub_category_link = get_term_link( $base_theme_sub_category );
+
+									if ( ! is_wp_error( $base_theme_sub_category_link ) && ! empty( $base_theme_sub_category_link ) ) {
+
+										add_filter( 'term_link', 'base_theme_term_link', 10, 3 );
+
+										printf(
+											'<a href="%1$s">%2$s</a> |  ',
+											esc_url( $base_theme_sub_category_link ),
+											esc_html( $base_theme_sub_category->name )
+										);
+
+										remove_filter( 'term_link', 'base_theme_term_link' );
+									}
+								}
+							}
 							?>
 						</div>
 
