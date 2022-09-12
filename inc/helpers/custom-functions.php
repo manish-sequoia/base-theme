@@ -402,3 +402,41 @@ function base_theme_placeholder_image() {
 		esc_url( get_template_directory_uri() . '/assets/img/placeholder.png' )
 	);
 }
+
+/**
+ * Get related posts based on current post's category.
+ *
+ * @return array List of posts.
+ */
+function base_theme_get_related_posts() {
+
+	$posts = array();
+
+	if ( ! is_singular( 'post' ) ) {
+
+		return $posts;
+	}
+
+	$current_terms = wp_get_post_categories(
+		get_the_ID(),
+		array(
+			'fields' => 'ids',
+			'number' => 1,
+		)
+	);
+
+	if ( ! is_wp_error( $current_terms ) && ! empty( $current_terms ) ) {
+
+		$related_posts = new WP_Query(
+			array(
+				'posts_per_page' => 4,
+				'cat'            => $current_terms[0],
+			)
+		);
+
+		$posts = $related_posts->posts;
+
+	}
+
+	return $posts;
+}
