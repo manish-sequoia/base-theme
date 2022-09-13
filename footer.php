@@ -50,7 +50,7 @@ if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 			</div>
 
 			<div class="cell" style="margin-bottom: 50px;">
-				<div class="site-info text-center"><?php echo _e( $base_theme_footer_copyright ); ?></div><!-- .site-info -->
+				<div class="site-info text-center"><?php echo wp_kses_post( $base_theme_footer_copyright ); ?></div><!-- .site-info -->
 			</div>
 		</div>
 	</div>
