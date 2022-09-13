@@ -6,7 +6,8 @@
  * @package Base-Theme
  */
 
-$base_theme_container_class = 'grid-container';
+$base_theme_container_class  = 'grid-container';
+$base_theme_footer_copyright = get_field( 'footer_copyright_text', 'option' );
 
 if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 	$base_theme_container_class = 'grid-container fluid';
@@ -49,7 +50,7 @@ if ( is_page_template( 'page-templates/fluid-width-template.php' ) ) {
 			</div>
 
 			<div class="cell" style="margin-bottom: 50px;">
-				<div class="site-info text-center"><?php base_theme_copyright_text(); ?></div><!-- .site-info -->
+				<div class="site-info text-center"><?php echo wp_kses_post( $base_theme_footer_copyright ); ?></div><!-- .site-info -->
 			</div>
 		</div>
 	</div>
