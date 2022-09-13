@@ -20,6 +20,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_63200cb8f872a",
+            "label": "Footer Copyright Text",
+            "name": "footer_copyright_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -40,5 +59,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661317966
+    "modified": 1663050175
 }

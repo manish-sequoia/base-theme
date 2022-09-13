@@ -25,27 +25,30 @@ $base_theme_category_image    = get_field( 'image_cat', $base_theme_queried_obje
 						}
 						?>
 					</div>
-					<?php if ( have_posts() ) { ?>
+					<?php if ( have_posts() ) { 
+						$base_theme_medium_block = '';
+						if ( ! empty( $base_theme_category_image ) ) {
+							$base_theme_medium_block = 'medium-8';
+						}
+						?>
 						<header class="page-header">
 							<div class="grid-x grid-margin-x">
-								<div class="cell small-12 medium-8">
+								<div class="cell small-12 <?php echo esc_attr( $base_theme_medium_block ); ?> ">
 									<?php
 									the_archive_title( '<h1 class="page-title">', '</h1>' );
 									the_archive_description( '<div class="taxonomy-description">', '</div>' );
 									?>
 								</div>
-								<div class="cell small-12 medium-4">
-									<?php
-									if ( ! empty( $base_theme_category_image ) ) {
+								
+								<?php 
+								if ( ! empty( $base_theme_category_image ) ) { ?>
+									<div class="cell small-12 medium-4">
+										<?php
+											echo wp_get_attachment_image( $base_theme_category_image, 'full' );
 
-										echo wp_get_attachment_image( $base_theme_category_image, 'full' );
-
-									} else {
-
-										base_theme_placeholder_image();
-									}
-									?>
-								</div>
+										?>
+									</div>
+								<?php } ?>
 							</div>
 						</header><!-- .page-header -->
 
